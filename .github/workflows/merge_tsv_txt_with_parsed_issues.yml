@@ -1,0 +1,74 @@
+name: Merge TSV or TXT Attachment with docs/parsed_issues.tsv
+
+on:
+  issues:
+    types: [closed]
+
+jobs:
+  disabled_job:
+    if: false  # This prevents the job from running
+  merge_tsv_txt:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check if the closed issue contains 'accept attachment' in a comment
+        run: |
+          ISSUE_NUMBER="${{ github.event.issue.number }}"
+          REPO="${{ github.repository }}"
+          COMMENTS_URL="https://api.github.com/repos/${REPO}/issues/${ISSUE_NUMBER}/comments"
+
+          # Fetch all comments and check for 'accept attachment'
+          COMMENT_FOUND=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            "${COMMENTS_URL}" | jq -r '.[] | select(.body | contains("accept attachment")) | .body')
+
+          # Exit if no valid comment found
+          if [[ -z "$COMMENT_FOUND" ]]; then
+            echo "No comment with 'accept attachment' found. Exiting workflow."
+            exit 0
+          else
+            echo "Found 'accept attachment' in comments. Proceeding..."
+          fi
+
+      - name: Extract .tsv or .txt URL from Issue Body
+        run: |
+          ISSUE_URL="https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.issue.number }}"
+          ISSUE_DETAILS=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" "$ISSUE_URL")
+
+          # Extract URLs from Markdown links, direct links, or GitHub attachments
+          FILE_URL=$(echo "$ISSUE_DETAILS" | jq -r '.body' | grep -oP '(?<=\()\s*https:\/\/[^\s)]+\.tsv|(?<=\()\s*https:\/\/[^\s)]+\.txt|https:\/\/[^\s]+\.tsv|https:\/\/[^\s]+\.txt' | head -n 1)
+
+          if [ -z "$FILE_URL" ]; then
+            echo "No valid .tsv or .txt URL found in the issue body."
+            exit 1
+          else
+            echo "Found file URL: $FILE_URL"
+          fi
+
+          echo "FILE_URL=$FILE_URL" >> $GITHUB_ENV
+
+      - name: Download TSV or TXT file
+        run: |
+          curl -L -o attachment_file "$FILE_URL"
+
+      - name: Append file data to docs/parsed_issues.tsv
+        run: |
+          # Ensure the docs directory exists
+          mkdir -p docs
+
+          # Append content if file exists, otherwise create a new one
+          if [ -f "docs/parsed_issues.tsv" ]; then
+            echo "Merging file data into docs/parsed_issues.tsv"
+            cat attachment_file >> docs/parsed_issues.tsv
+          else
+            echo "Creating new docs/parsed_issues.tsv"
+            mv attachment_file docs/parsed_issues.tsv
+          fi
+
+      - name: Commit updated docs/parsed_issues.tsv
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add docs/parsed_issues.tsv
+          git diff --cached --quiet || (git commit -m "Merge TSV or TXT attachment with docs/parsed_issues.tsv" && git push origin main)

@@ -1,0 +1,27 @@
+name: Bulk Mutation Submission
+description: Submit multiple mutations at once using a TSV table
+title: "Bulk table submission"
+labels: ["submission", "auto-verify", "bulk"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### Instructions
+        To submit multiple mutations, please provide a TSV (Tab-Separated Values) table in the box below.
+        
+        **Requirements:**
+        1. The first line **MUST** be exactly:
+           `protein	mutation	reference_accession	effect	doi	notes`
+        2. Columns must be separated by tabs.
+        3. You may also **attach a file** (.tsv or .txt) containing this table.
+  
+  - type: textarea
+    id: tsv_data
+    attributes:
+      label: TSV Data
+      description: Paste your TSV data here OR drag-and-drop a .tsv file.
+      placeholder: |
+        protein	mutation	reference_accession	effect	doi	notes
+        HA	H5N1	CY123456	Increased binding	10.1128/jvi...	My notes
+    validations:
+      required: true

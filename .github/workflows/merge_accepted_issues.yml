@@ -1,0 +1,118 @@
+name: Merge Accepted Issues
+
+on:
+  issues:
+    types:
+      - closed
+
+jobs:
+  merge_issues:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install Dependencies
+        run: pip install requests
+
+      - name: Check If Issue is Accepted
+        id: check_label
+        run: |
+          LABELS=$(jq -r '.issue.labels[].name' <<< '${{ toJson(github.event) }}')
+          if [[ "$LABELS" =~ "accepted" ]]; then
+            echo "Issue is accepted"
+            echo "ACCEPTED=true" >> $GITHUB_ENV
+          else
+            echo "Issue is not accepted"
+            echo "ACCEPTED=false" >> $GITHUB_ENV
+          fi
+
+      - name: Get Issue Details
+        if: env.ACCEPTED == 'true'
+        id: issue_details
+        run: |
+          echo "Fetching issue details..."
+              
+          ISSUE_NUMBER="${{ github.event.issue.number }}"
+          REPO="${{ github.repository }}"
+          ISSUE_URL="https://api.github.com/repos/${REPO}/issues/${ISSUE_NUMBER}"
+            
+          # Fetch issue body using GitHub API
+          RESPONSE=$(curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" -H "Accept: application/vnd.github.v3+json" "$ISSUE_URL")
+            
+          # Debug: Print full API response
+          echo "GitHub API Response: $RESPONSE"
+            
+          # Extract issue body
+          ISSUE_BODY=$(echo "$RESPONSE" | jq -r '.body')
+            
+          # Check if issue body was fetched correctly
+          if [ -z "$ISSUE_BODY" ] || [ "$ISSUE_BODY" == "null" ]; then
+            echo "❌ Issue body could not be fetched!"
+          fi
+            
+          # Encode issue body to safely store it
+          ISSUE_BODY_BASE64=$(echo "$ISSUE_BODY" | base64 -w 0)
+            
+          # Store values in GITHUB_ENV
+          {
+          echo "ISSUE_NUMBER=$ISSUE_NUMBER"
+          echo "ISSUE_BODY_BASE64=$ISSUE_BODY_BASE64"
+          } >> "$GITHUB_ENV"
+              
+          # Debugging
+          echo "✅ Issue Number: $ISSUE_NUMBER"
+          echo "✅ Encoded Issue Body: $ISSUE_BODY_BASE64"
+  
+
+      - name: Check for Attachments
+        if: env.ACCEPTED == 'true'
+        id: check_attachment
+        run: |
+          ISSUE_URL="https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.issue.number }}"
+          ISSUE_DETAILS=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" "$ISSUE_URL")
+
+          # Extract URLs from Markdown links, direct links, or GitHub attachments
+          FILE_URL=$(echo "$ISSUE_DETAILS" | jq -r '.body' | grep -oP '(?<=\()\s*https:\/\/[^\s)]+\.tsv|(?<=\()\s*https:\/\/[^\s)]+\.txt|https:\/\/[^\s]+\.tsv|https:\/\/[^\s]+\.txt' | head -n 1)
+
+          if [ -z "$FILE_URL" ]; then
+            echo "No valid .tsv or .txt URL found in the issue body."
+          else
+            echo "Found file URL: $FILE_URL"
+          fi
+
+          echo "FILE_URL=$FILE_URL" >> $GITHUB_ENV
+
+
+      - name: Download Attachment and merge (if present)
+        if: env.ACCEPTED == 'true' && env.FILE_URL != ''
+        run: |
+          curl -L -o new_data.tsv "$FILE_URL"
+          python .github/scripts/merge_issues.py docs/parsed_issues.tsv "${{ env.ISSUE_BODY_BASE64 }}" new_data.tsv
+
+      - name: Merge Issue Body with Existing File
+        if: env.ACCEPTED == 'true' && env.FILE_URL == ''
+        run: |
+          python .github/scripts/merge_issues.py docs/parsed_issues.tsv "${{ env.ISSUE_BODY_BASE64 }}" 
+
+      - name: Validate DOI in Merged File
+        if: env.ACCEPTED == 'true'
+        run: |
+          python .github/scripts/add_doi_details.py docs/parsed_issues.tsv docs/validated_dois.tsv
+          cat docs/validated_dois.tsv
+
+      - name: Commit and Push Changes
+        if: env.ACCEPTED == 'true'
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add docs/parsed_issues.tsv
+          git add docs/validated_dois.tsv
+          git commit -m "Updated parsed issues from Issue #${{ env.ISSUE_NUMBER }}"
+          git push

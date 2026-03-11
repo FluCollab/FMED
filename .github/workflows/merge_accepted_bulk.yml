@@ -1,0 +1,101 @@
+name: Merge Accepted Bulk Submissions
+
+on:
+  issues:
+    types: [labeled]
+
+jobs:
+  merge_bulk:
+    runs-on: ubuntu-latest
+    if: |
+      github.event.label.name == 'accepted' && 
+      contains(github.event.issue.labels.*.name, 'bulk')
+    
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install Dependencies
+        run: pip install -r .github/scripts/requirements.txt
+
+      - name: Re-validate and Extract Valid Mutations
+        id: validate
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Get issue body
+          gh issue view ${{ github.event.issue.number }} --json body -q '.body' > issue_body.md
+          
+          # Run validation to get valid mutations
+          set +e
+          python .github/scripts/validate_bulk_submission.py issue_body.md docs/parsed_issues.tsv valid_mutations.json 2>&1 | head -50
+          EXIT_CODE=$?
+          set -e
+          
+          VALID_COUNT=$(jq 'length' valid_mutations.json 2>/dev/null || echo "0")
+          echo "valid_count=$VALID_COUNT" >> $GITHUB_OUTPUT
+          
+          if [ "$VALID_COUNT" = "0" ]; then
+            echo "No valid mutations to merge"
+            exit 1
+          fi
+
+      - name: Merge Valid Mutations
+        run: |
+          VALID_COUNT="${{ steps.validate.outputs.valid_count }}"
+          echo "Merging $VALID_COUNT valid mutations..."
+          
+          # Process each valid mutation
+          for i in $(seq 0 $(($VALID_COUNT - 1))); do
+            ENTRY=$(jq ".[$i]" valid_mutations.json)
+            echo "$ENTRY" > single_entry.json
+            python .github/scripts/append_issue_json.py docs/parsed_issues.tsv single_entry.json || true
+          done
+
+      - name: Enrich with DOI Metadata
+        run: |
+          python .github/scripts/add_doi_details.py docs/parsed_issues.tsv docs/validated_dois.tsv
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
+          git add docs/parsed_issues.tsv docs/validated_dois.tsv
+          
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Merge bulk mutations from Issue #${{ github.event.issue.number }}"
+            git push
+          fi
+
+      - name: Comment on Success
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          VALID_COUNT="${{ steps.validate.outputs.valid_count }}"
+          gh issue comment ${{ github.event.issue.number }} --body "✅ **Bulk Submission Merged!**
+
+$VALID_COUNT mutation(s) have been added to the database. They will appear on the [database viewer](https://centre-for-virus-research.github.io/FMED/) shortly."
+
+      - name: Close Issue
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh issue close ${{ github.event.issue.number }}
+
+      - name: Handle Merge Failure
+        if: failure()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh issue comment ${{ github.event.issue.number }} --body "❌ **Merge Failed**
+
+There was an error merging the mutations. Please check the workflow logs for details."
+          gh issue edit ${{ github.event.issue.number }} --remove-label "accepted"

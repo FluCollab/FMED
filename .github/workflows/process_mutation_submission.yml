@@ -1,0 +1,225 @@
+name: Process Mutation Submission
+
+on:
+  issues:
+    types: [opened, edited]
+
+jobs:
+  # Job 1: Detect submission type
+  detect_type:
+    runs-on: ubuntu-latest
+    if: contains(github.event.issue.labels.*.name, 'submission')
+    outputs:
+      submission_type: ${{ steps.detect.outputs.type }}
+    
+    steps:
+      - name: Detect Submission Type
+        id: detect
+        run: |
+          # Check if issue has the 'bulk' label
+          LABELS='${{ toJson(github.event.issue.labels.*.name) }}'
+          
+          if echo "$LABELS" | grep -q '"bulk"'; then
+            echo "type=bulk" >> $GITHUB_OUTPUT
+            echo "Detected: Bulk TSV submission"
+          else
+            echo "type=single" >> $GITHUB_OUTPUT
+            echo "Detected: Single mutation submission"
+          fi
+
+  # Job 2: Process single mutation submissions
+  process_single:
+    runs-on: ubuntu-latest
+    needs: detect_type
+    if: needs.detect_type.outputs.submission_type == 'single'
+    
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install Dependencies
+        run: pip install -r .github/scripts/requirements.txt
+
+      - name: Parse Issue Form
+        id: parse
+        run: |
+          echo "${{ github.event.issue.body }}" > issue_body.md
+          JSON_OUTPUT=$(python .github/scripts/parse_issue_form.py issue_body.md)
+          echo "Parsed JSON: $JSON_OUTPUT"
+          echo "$JSON_OUTPUT" > mutation_data.json
+
+      - name: Rename Issue
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          PROTEIN=$(jq -r '.[0].protein // .protein' mutation_data.json)
+          MUTATION=$(jq -r '.[0].mutation // .mutation' mutation_data.json)
+          NEW_TITLE="Mutation: $PROTEIN $MUTATION"
+          gh issue edit ${{ github.event.issue.number }} --title "$NEW_TITLE"
+
+      - name: Validate Mutation
+        id: validate
+        run: |
+          # Handle both single object and array format
+          if jq -e 'type == "array"' mutation_data.json > /dev/null 2>&1; then
+            jq '.[0]' mutation_data.json > single_mutation.json
+          else
+            cp mutation_data.json single_mutation.json
+          fi
+          
+          # Run validation and capture result
+          set +e
+          RESULT=$(python .github/scripts/validate_single_mutation.py single_mutation.json docs/parsed_issues.tsv)
+          EXIT_CODE=$?
+          set -e
+          
+          echo "$RESULT" > validation_result.json
+          echo "exit_code=$EXIT_CODE" >> $GITHUB_OUTPUT
+          
+          # Extract validation status
+          IS_VALID=$(echo "$RESULT" | jq -r '.valid')
+          IS_DUP=$(echo "$RESULT" | jq -r '.is_duplicate')
+          echo "is_valid=$IS_VALID" >> $GITHUB_OUTPUT
+          echo "is_duplicate=$IS_DUP" >> $GITHUB_OUTPUT
+
+      - name: Handle Validation Failure
+        if: steps.validate.outputs.is_valid != 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          REPORT=$(jq -r '.report // "Validation failed"' validation_result.json)
+          gh issue comment ${{ github.event.issue.number }} --body "$REPORT"
+          gh issue edit ${{ github.event.issue.number }} --add-label "invalid"
+          exit 1
+
+      - name: Append to Database
+        if: steps.validate.outputs.is_valid == 'true'
+        run: |
+          python .github/scripts/append_issue_json.py docs/parsed_issues.tsv single_mutation.json
+
+      - name: Enrich with DOI Metadata
+        if: steps.validate.outputs.is_valid == 'true'
+        run: |
+          python .github/scripts/add_doi_details.py docs/parsed_issues.tsv docs/validated_dois.tsv
+
+      - name: Commit and Push Changes
+        if: steps.validate.outputs.is_valid == 'true'
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
+          git add docs/parsed_issues.tsv docs/validated_dois.tsv
+          
+          # Regenerate Static API JSON files
+          python .github/scripts/generate_api.py
+          git add docs/api/*.json docs/api/protein/*.json
+          
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Add mutation from Issue #${{ github.event.issue.number }}"
+            git push
+          fi
+
+      - name: Comment on Success
+        if: steps.validate.outputs.is_valid == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh issue comment ${{ github.event.issue.number }} --body "✅ **Mutation Added Successfully!** Your mutation has been validated and added to the database. It will appear on the [database viewer](https://centre-for-virus-research.github.io/FMED/) shortly."
+
+      - name: Close Issue on Success
+        if: steps.validate.outputs.is_valid == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh issue close ${{ github.event.issue.number }}
+
+  # Job 3: Validate bulk mutation submissions
+  validate_bulk:
+    runs-on: ubuntu-latest
+    needs: detect_type
+    if: needs.detect_type.outputs.submission_type == 'bulk'
+    
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install Dependencies
+        run: pip install -r .github/scripts/requirements.txt
+
+      - name: Validate Bulk Submission
+        id: validate
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "${{ github.event.issue.body }}" > issue_body.md
+          
+          # Run validation and capture output
+          set +e
+          REPORT=$(python .github/scripts/validate_bulk_submission.py issue_body.md docs/parsed_issues.tsv valid_mutations.json 2>&1)
+          EXIT_CODE=$?
+          set -e
+          
+          # Save report to file
+          echo "$REPORT" > validation_report.md
+          
+          # Get counts from JSON
+          VALID_COUNT=$(jq 'length' valid_mutations.json 2>/dev/null || echo "0")
+          
+          echo "exit_code=$EXIT_CODE" >> $GITHUB_OUTPUT
+          echo "valid_count=$VALID_COUNT" >> $GITHUB_OUTPUT
+
+      - name: Rename Issue
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          VALID_COUNT="${{ steps.validate.outputs.valid_count }}"
+          gh issue edit ${{ github.event.issue.number }} --title "Bulk Submission: $VALID_COUNT mutations"
+
+      - name: Post Validation Report
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh issue comment ${{ github.event.issue.number }} --body-file validation_report.md
+
+      - name: Update Labels Based on Validation
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          VALID_COUNT="${{ steps.validate.outputs.valid_count }}"
+          EXIT_CODE="${{ steps.validate.outputs.exit_code }}"
+          
+          # Remove old validation labels
+          gh issue edit ${{ github.event.issue.number }} --remove-label "validated" 2>/dev/null || true
+          gh issue edit ${{ github.event.issue.number }} --remove-label "needs-review" 2>/dev/null || true
+          gh issue edit ${{ github.event.issue.number }} --remove-label "invalid" 2>/dev/null || true
+          
+          if [ "$EXIT_CODE" = "0" ]; then
+            # All valid
+            gh issue edit ${{ github.event.issue.number }} --add-label "validated"
+          elif [ "$EXIT_CODE" = "2" ]; then
+            # Partial success (some valid, some invalid)
+            gh issue edit ${{ github.event.issue.number }} --add-label "needs-review"
+          else
+            # No valid entries
+            gh issue edit ${{ github.event.issue.number }} --add-label "invalid"
+          fi
+
+      - name: Upload Valid Mutations Artifact
+        if: steps.validate.outputs.valid_count != '0'
+        uses: actions/upload-artifact@v4
+        with:
+          name: valid-mutations-${{ github.event.issue.number }}
+          path: valid_mutations.json
+          retention-days: 30

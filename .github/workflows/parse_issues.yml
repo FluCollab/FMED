@@ -1,0 +1,37 @@
+name: Parse Accepted Issues
+
+on:
+  issues:
+    types: [closed]
+
+
+jobs:
+  disabled_job:
+    if: false  # This prevents the job from running
+  parse_issues:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Fetch Closed Issues with Accepted Tag
+        run: |
+          curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            "https://api.github.com/repos/${{ github.repository }}/issues?state=closed&labels=accepted" \
+            > issues.json
+
+      - name: Run Parsing Script
+        run: |
+          python3 .github/scripts/parse_accepted_mutations.py
+
+      - name: Ensure docs directory exists
+        run: |
+          mkdir -p docs  # Create docs directory if it doesn't exist
+
+      - name: Commit TSV file to Docs Directory
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add docs/parsed_issues.tsv
+          git diff --cached --quiet || (git commit -m "Add parsed issues TSV for GitHub Pages" && git push origin main)
+

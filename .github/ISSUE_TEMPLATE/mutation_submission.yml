@@ -1,0 +1,79 @@
+name: Mutation Submission
+description: Submit a new influenza mutation entry for the database
+title: "[Auto-generated] New Mutation Submission"
+labels: ["submission", "auto-verify", "single"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for contributing to the Flu Mutation Effect Database!
+        Please fill out the form below to submit a new mutation.
+
+  - type: dropdown
+    id: protein
+    attributes:
+      label: Protein
+      description: Select the protein where the mutation occurs.
+      options:
+        - HA
+        - NA
+        - PB2
+        - PB1
+        - PA
+        - NP
+        - M1
+        - M2
+        - NS1
+        - NS2
+    validations:
+      required: true
+
+  - type: input
+    id: mutation
+    attributes:
+      label: Mutation
+      description: The specific mutation (e.g., K135E). Format as [WildType][Position][Mutant].
+      placeholder: K135E
+    validations:
+      required: true
+
+  - type: input
+    id: reference_accession
+    attributes:
+      label: WT Accession / Sequence ID
+      description: The GenBank accession number or sequence ID of the wild type.
+      placeholder: e.g., CY123456
+    validations:
+      required: true
+
+  - type: dropdown
+    id: effect
+    attributes:
+      label: Effect
+      description: Select the mutation effect.
+      options:
+        - Mammalian adaptation
+        - Increased binding
+        - Avian adaptation
+        - Drug resistance
+        - Antigenic escape mutation
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: doi
+    attributes:
+      label: Publication DOI
+      description: The DOI of the publication supporting this finding (e.g., 10.1128/jvi.01234-21).
+      placeholder: 10.1128/jvi.xxxxx-xx
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional notes
+      description: Describe any additional information.
+    validations:
+      required: false
