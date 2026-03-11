@@ -1,8 +1,8 @@
 # Flu Mutation Effect Database
 
-[![View Database](https://img.shields.io/badge/View-Database-blue)](https://centre-for-virus-research.github.io/FMED/)
-[![Submit Mutation](https://img.shields.io/badge/Submit-Mutation-green)](https://github.com/centre-for-virus-research/FMED/issues/new?template=mutation_submission.yml)
-[![Discussions](https://img.shields.io/badge/Join-Discussions-purple)](https://github.com/centre-for-virus-research/FMED/discussions)
+[![View Database](https://img.shields.io/badge/View-Database-blue)](https://flucollab.github.io/FMED/)
+[![Submit Mutation](https://img.shields.io/badge/Submit-Mutation-green)](https://github.com/flucollab/FMED/issues/new?template=mutation_submission.yml)
+[![Discussions](https://img.shields.io/badge/Join-Discussions-purple)](https://github.com/flucollab/FMED/discussions)
 
 ## Overview
 
@@ -15,7 +15,7 @@ Researchers can submit new mutations identified from scientific publications, in
 The FMED database is open and accessible in multiple formats:
 
 ### Web Interface
-Browse the [Database Viewer](https://centre-for-virus-research.github.io/FMED/) to see mutations in Table or Sequence view.
+Browse the [Database Viewer](https://flucollab.github.io/FMED/) to see mutations in Table or Sequence view.
 
 ### Static Data Files
 *   [parsed_issues.tsv](docs/parsed_issues.tsv): Raw validated mutation data.
@@ -31,23 +31,23 @@ FMED provides a static JSON API for programmatic access:
 
 ## 🔬 View the Database
 
-Browse all submitted mutations at: **[FMED Database Viewer](https://centre-for-virus-research.github.io/FMED/)**
+Browse all submitted mutations at: **[FMED Database Viewer](https://flucollab.github.io/FMED/)**
 
 The database can be filtered by protein (HA, NA, PB2, PB1, PA, NP, M1, M2, NS1, NS2) and searched by mutation, effect, or publication.
 
 ## 📝 Submit Mutations
 
 ### Single Mutation
-Use the [Mutation Submission Form](https://github.com/centre-for-virus-research/FMED/issues/new?template=mutation_submission.yml) to submit a single mutation.
+Use the [Mutation Submission Form](https://github.com/flucollab/FMED/issues/new?template=mutation_submission.yml) to submit a single mutation.
 
 ### Bulk Submission
-Use the [Bulk Mutation Submission Form](https://github.com/centre-for-virus-research/FMED/issues/new?template=bulk_mutation_submission.yml) to submit multiple mutations at once using a TSV table.
+Use the [Bulk Mutation Submission Form](https://github.com/flucollab/FMED/issues/new?template=bulk_mutation_submission.yml) to submit multiple mutations at once using a TSV table.
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed submission guidelines.
 
 ## 💬 Discussions
 
-Have questions about specific mutations or the database? Join our [GitHub Discussions](https://github.com/centre-for-virus-research/FMED/discussions):
+Have questions about specific mutations or the database? Join our [GitHub Discussions](https://github.com/flucollab/FMED/discussions):
 
 - **Mutation Q&A** - Ask questions about specific mutations
 - **Data Requests** - Request new mutations to be added
