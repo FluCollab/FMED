@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flu Mutation Effect Database (FMED) - Sequence View</title>
+    <style>
+        :root {
+            --primary-bg: #f5f7fa;
+            --panel-bg: #ffffff;
+            --text-main: #333;
+            --text-light: #7f8c8d;
+            --accent: #34495e;
+            --link: #3498db;
+            --mutation-bg: #e1f5fe;
+            --mutation-border: #01579b;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--primary-bg);
+            margin: 0;
+            padding: 20px;
+            color: var(--text-main);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: var(--accent);
+            margin-bottom: 5px;
+        }
+
+        .updated-date {
+            text-align: center;
+            font-size: 0.9em;
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        /* Legacy Style Switcher */
+        .optionButtons {
+            background: #ecf0f1;
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: center;
+            font-size: 14px;
+        }
+
+        .switcherDiv,
+        .proteinSwitcherDiv {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .dataDiv_switcher,
+        .protein_switcher {
+            text-decoration: none;
+            color: var(--accent);
+            padding: 4px 10px;
+            border-radius: 4px;
+            border: 1px solid transparent;
+            transition: all 0.2s;
+        }
+
+        .dataDiv_switcher:hover,
+        .protein_switcher:hover {
+            background: #dfe6e9;
+        }
+
+        .dataDiv_switcher.active,
+        .protein_switcher.active {
+            background: var(--accent);
+            color: white;
+        }
+
+        .dataDiv_switcher_helper,
+        .protein_switcher_helper {
+            color: var(--text-light);
+            font-weight: bold;
+        }
+
+        /* Sequence View */
+        .limitedDiv,
+        #resInfoDiv {
+            background: var(--panel-bg);
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 1200px;
+            /* Fixed width to ensure perfect alignment */
+            margin: 0 auto;
+            box-sizing: border-box;
+        }
+
+        .limitedDiv {
+            padding: 15px;
+            line-height: 1.2;
+        }
+
+        .sequenceText {
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+            font-size: 10px;
+            white-space: nowrap;
+        }
+
+        .sequenceText table {
+            border-collapse: separate;
+            border-spacing: 0;
+            width: auto;
+            margin: 0 auto;
+        }
+
+        .sequenceText td {
+            vertical-align: middle;
+            padding: 0;
+            white-space: nowrap;
+        }
+
+        /* Base style for all residues */
+        .res-box {
+            display: inline-block;
+            width: 11px;
+            height: 14px;
+            line-height: 13px;
+            text-align: center;
+            border: 1px solid #e1e7eb;
+            box-sizing: border-box;
+            margin: 0.5px 0.25px;
+            color: #444;
+            text-decoration: none;
+            border-radius: 1px;
+            background: #fff;
+        }
+
+        /* Highlighted mutations */
+        .res-box.mutation {
+            background: #e1f5fe;
+            border-color: #01579b;
+            color: #01579b;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .res-box.mutation:hover {
+            background: #b3e5fc;
+            box-shadow: 0 0 2px rgba(1, 87, 155, 0.5);
+        }
+
+        .spacer {
+            display: inline-block;
+            width: 4px;
+        }
+
+        #offset {
+            color: var(--text-light);
+            font-size: 9px;
+            font-weight: normal;
+        }
+
+        #resInfoDiv {
+            margin-top: 20px;
+            padding: 20px;
+            min-height: 100px;
+        }
+
+        .resInfo-title {
+            font-weight: bold;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+
+        /* UI Helpers */
+        .loading-overlay {
+            text-align: center;
+            padding: 40px;
+            color: var(--text-light);
+        }
+
+        .error {
+            color: #e74c3c;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>Mutation Sequence Viewer</h1>
+        <div class="updated-date" id="updated-date"></div>
+    </div>
+
+    <div class="optionButtons">
+        <span class="switcherDiv">
+            <span class="dataDiv_switcher_helper">view:</span>
+            <a id="nav-sequence" class="dataDiv_switcher active" href="sequence.html">Sequence</a>
+            <a id="nav-table" class="dataDiv_switcher" href="index.html">Table</a>
+        </span>
+
+        <span class="proteinSwitcherDiv" id="protein-switcher">
+            <span class="protein_switcher_helper">protein:</span>
+            <!-- Populated via JS -->
+        </span>
+    </div>
+
+    <div id="loading" class="loading-overlay">Loading data...</div>
+
+    <div id="view-sequence">
+        <div class="limitedDiv">
+            <div id="sequence-container" class="sequenceText"></div>
+            <div class="clickHelp" style="text-align: center; font-style: italic; margin-top: 15px; color: #666;">
+                Boxed residues have mutation effect information. Click on residue for more details. PR8 (H1N1) used as
+                reference.
+            </div>
+        </div>
+        <div id="resInfoDiv">
+            <div class="resInfo-title">Residue Information</div>
+            <div id="resInfoContent">Select a residue to view details.</div>
+        </div>
+    </div>
+
+    <script>
+        let currentProtein = 'HA';
+        let mutations = [];
+        let sequences = {};
+        const PROTEINS = ['HA', 'NA', 'PB2', 'PB1', 'PA', 'NP', 'M1', 'M2', 'NS1', 'NS2'];
+
+        async function init() {
+            try {
+                const [seqRes, mutRes] = await Promise.all([
+                    fetch('api/sequences.json'),
+                    fetch(`api/protein/${currentProtein}.json`)
+                ]);
+
+                sequences = await seqRes.json();
+                mutations = await mutRes.json();
+
+                buildProteinSwitcher();
+                renderSequence();
+                document.getElementById('loading').style.display = 'none';
+            } catch (err) {
+                document.getElementById('loading').innerHTML = `<span class="error">Error loading data: ${err.message}</span>`;
+            }
+        }
+
+        function buildProteinSwitcher() {
+            const container = document.getElementById('protein-switcher');
+            PROTEINS.forEach(p => {
+                const a = document.createElement('a');
+                a.id = `prot-${p}`;
+                a.className = 'protein_switcher' + (p === currentProtein ? ' active' : '');
+                a.href = 'javascript:void(0)';
+                a.textContent = p.toUpperCase();
+                a.onclick = () => selectProtein(p);
+                container.appendChild(a);
+            });
+        }
+
+        async function selectProtein(p) {
+            currentProtein = p;
+            document.querySelectorAll('.protein_switcher').forEach(el => el.classList.toggle('active', el.id === `prot-${p}`));
+
+            try {
+                const res = await fetch(`api/protein/${p}.json`);
+                mutations = res.ok ? await res.json() : [];
+                renderSequence();
+            } catch (e) { mutations = []; renderSequence(); }
+        }
+
+        function renderSequence() {
+            const container = document.getElementById('sequence-container');
+            const seq = sequences[currentProtein] || "";
+            if (!seq) {
+                container.innerHTML = "No sequence data available for this protein.";
+                return;
+            }
+
+            const positionMap = {};
+            mutations.forEach(m => {
+                const posMatch = m.mutation.match(/\d+/);
+                if (posMatch) {
+                    const pos = parseInt(posMatch[0]);
+                    if (!positionMap[pos]) positionMap[pos] = [];
+                    positionMap[pos].push(m);
+                }
+            });
+
+            let html = "<table>";
+            for (let i = 0; i < seq.length; i += 80) {
+                const lineStart = i + 1;
+                const lineEnd = Math.min(i + 80, seq.length);
+
+                html += `<tr><td id="offset" style="text-align: right; padding-right: 15px;">${lineStart}</td><td>`;
+
+                for (let j = i; j < lineEnd; j++) {
+                    const pos = j + 1;
+                    const res = seq[j];
+
+                    // Add gap every 10 residues
+                    if (j > i && (j - i) % 10 === 0) {
+                        html += '<span class="spacer"></span>';
+                    }
+
+                    const isMutation = !!positionMap[pos];
+                    const className = isMutation ? 'res-box mutation' : 'res-box';
+                    const title = isMutation ? `Residue ${pos}: ${positionMap[pos].length} mutation(s)` : `Residue ${pos}`;
+
+                    if (isMutation) {
+                        html += `<a href="javascript:void(0)" class="${className}" onclick="showResInfo(${pos})" title="${title}">${res}</a>`;
+                    } else {
+                        html += `<span class="${className}" title="${title}">${res}</span>`;
+                    }
+                }
+
+                html += `</td><td id="offset" style="padding-left: 15px;">${lineEnd}</td></tr>`;
+            }
+            html += "</table>";
+            container.innerHTML = html;
+            document.getElementById('resInfoContent').textContent = "Select a residue to view details.";
+        }
+
+        function showResInfo(pos) {
+            const posMutations = mutations.filter(m => {
+                const p = m.mutation.match(/\d+/);
+                return p && parseInt(p[0]) === pos;
+            });
+
+            const content = document.getElementById('resInfoContent');
+            if (posMutations.length === 0) {
+                content.textContent = `No mutation details for residue ${pos}.`;
+                return;
+            }
+
+            let html = `<strong>Residue ${pos} Mutations:</strong><br><br><ul>`;
+            posMutations.forEach(m => {
+                html += `<li><strong>${m.mutation}</strong>: ${m.effect} (${m.notes || 'No notes'})<br>
+                    <small>Source: <a href="${m.metadata.doi_url}" target="_blank">${m.metadata.title || m.doi}</a></small></li>`;
+            });
+            html += `</ul>`;
+            content.innerHTML = html;
+            document.getElementById('resInfoDiv').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        async function showLastUpdated() {
+            try {
+                const response = await fetch('api/metadata.json');
+                if (response.ok) {
+                    const metadata = await response.json();
+                    if (metadata.last_updated) {
+                        document.getElementById('updated-date').innerText = `Data last updated: ${metadata.last_updated}`;
+                    }
+                }
+            } catch (e) {
+                console.log("Error fetching metadata:", e);
+                document.getElementById('updated-date').innerText = `Data last updated: --`;
+            }
+        }
+
+        init();
+        showLastUpdated();
+    </script>
+
+</body>
+
+</html>

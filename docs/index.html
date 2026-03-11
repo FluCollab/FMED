@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flu Mutation Effect Database</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f7fa;
+            margin: 0;
+            padding: 40px;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .updated-date {
+            text-align: center;
+            font-size: 0.9em;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+        }
+
+        /* Protein Tabs */
+        .tabs-container {
+            max-width: 1200px;
+            margin: 0 auto 20px auto;
+        }
+
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .tab {
+            padding: 10px 20px;
+            background-color: #ecf0f1;
+            border: none;
+            border-radius: 8px 8px 0 0;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            color: #7f8c8d;
+            transition: all 0.2s ease;
+        }
+
+        .tab:hover {
+            background-color: #dfe6e9;
+            color: #2c3e50;
+        }
+
+        .tab.active {
+            background-color: #34495e;
+            color: white;
+        }
+
+        .tab .count {
+            display: inline-block;
+            background-color: rgba(0, 0, 0, 0.15);
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 12px;
+            margin-left: 6px;
+        }
+
+        .tab.active .count {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #searchInput {
+            padding: 10px;
+            width: 300px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .status-bar {
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        table {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            border-collapse: collapse;
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th,
+        td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            text-align: left;
+        }
+
+        th {
+            background-color: #34495e;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            user-select: none;
+            position: relative;
+        }
+
+        th:hover {
+            background-color: #2c3e50;
+        }
+
+        th::after {
+            content: '↕';
+            font-size: 0.8em;
+            margin-left: 5px;
+            opacity: 0.5;
+        }
+
+        th.asc::after {
+            content: '↑';
+            opacity: 1;
+        }
+
+        th.desc::after {
+            content: '↓';
+            opacity: 1;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Nav links */
+        .nav-links {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .nav-links a {
+            margin: 0 10px;
+            padding: 5px 15px;
+            background: #ecf0f1;
+            border-radius: 4px;
+            color: #34495e;
+        }
+
+        .nav-links a:hover {
+            background: #dfe6e9;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .controls {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            #searchInput {
+                width: 100%;
+            }
+
+            body {
+                padding: 10px;
+            }
+
+            .tabs {
+                justify-content: center;
+            }
+
+            .tab {
+                padding: 8px 12px;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Mutation Database</h1>
+    <div class="updated-date" id="updated-date"></div>
+
+    <div class="nav-links">
+        <a href="sequence.html">Sequence View</a>
+    </div>
+
+    <div class="tabs-container">
+        <div class="tabs" id="protein-tabs">
+            <!-- Tabs will be populated here -->
+        </div>
+    </div>
+
+    <div class="controls">
+        <input type="text" id="searchInput" onkeyup="filterTable()" placeholder="Search for mutations, effects...">
+        <div class="status-bar" id="recordCount">Loading...</div>
+    </div>
+
+    <table id="mutation-table">
+        <thead>
+            <tr>
+                <th onclick="sortTable(0)">Protein</th>
+                <th onclick="sortTable(1)">Mutation</th>
+                <th onclick="sortTable(2)">WT Accession</th>
+                <th onclick="sortTable(3)">Effect</th>
+                <th onclick="sortTable(4)">Notes</th>
+                <th onclick="sortTable(5)">Publication</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Data will be populated here -->
+        </tbody>
+    </table>
+
+    <script>
+        // Store all row data with their protein type
+        let allRowData = [];
+        let activeProtein = 'All';
+
+        // Protein order (matching the issue template)
+        const PROTEIN_ORDER = ['All', 'HA', 'NA', 'PB2', 'PB1', 'PA', 'NP', 'M1', 'M2', 'NS1', 'NS2'];
+
+        async function loadTable() {
+            try {
+                const response = await fetch('validated_dois.tsv');
+                if (!response.ok) throw new Error('Network response was not ok');
+                const text = await response.text();
+
+                const lines = text.trim().split('\n').slice(1); // Skip header
+                const proteinCounts = { 'All': 0 };
+
+                lines.forEach(line => {
+                    const cols = line.split('\t');
+                    // Expected columns: protein, mutation, ref_acc, effect, doi, notes, authors, year, title, journal, reference, doi_url
+
+                    if (cols.length < 5) return; // Skip malformed rows
+
+                    const protein = cols[0];
+                    const mutation = cols[1];
+                    const reference_accession = cols[2];
+                    const effect = cols[3];
+                    const notes = cols[5] || '';
+                    const reference = cols[10] || cols[4]; // Fallback to DOI if reference missing
+                    const doi_url = cols[11] || `https://doi.org/${cols[4]}`;
+
+                    // Store row data
+                    allRowData.push({
+                        protein,
+                        mutation,
+                        reference_accession,
+                        effect,
+                        notes,
+                        reference,
+                        doi_url
+                    });
+
+                    // Count proteins
+                    proteinCounts['All']++;
+                    if (!proteinCounts[protein]) {
+                        proteinCounts[protein] = 0;
+                    }
+                    proteinCounts[protein]++;
+                });
+
+                // Build tabs
+                buildTabs(proteinCounts);
+
+                // Render initial table
+                renderTable();
+
+            } catch (error) {
+                console.error('Error loading table:', error);
+                document.getElementById('recordCount').innerText = 'Error loading data.';
+            }
+        }
+
+        function buildTabs(counts) {
+            const tabsContainer = document.getElementById('protein-tabs');
+            tabsContainer.innerHTML = '';
+
+            PROTEIN_ORDER.forEach(protein => {
+                if (counts[protein] === undefined) return; // Skip proteins with no data
+
+                const tab = document.createElement('button');
+                tab.className = 'tab' + (protein === 'All' ? ' active' : '');
+                tab.dataset.protein = protein;
+                tab.onclick = () => selectTab(protein);
+
+                const countSpan = document.createElement('span');
+                countSpan.className = 'count';
+                countSpan.textContent = counts[protein];
+
+                tab.textContent = protein;
+                tab.appendChild(countSpan);
+                tabsContainer.appendChild(tab);
+            });
+        }
+
+        function selectTab(protein) {
+            activeProtein = protein;
+
+            // Update active state
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.toggle('active', tab.dataset.protein === protein);
+            });
+
+            // Clear search
+            document.getElementById('searchInput').value = '';
+
+            // Re-render table
+            renderTable();
+        }
+
+        function renderTable() {
+            const tbody = document.getElementById('mutation-table').querySelector('tbody');
+            tbody.innerHTML = '';
+
+            // Filter by active protein
+            const filteredData = activeProtein === 'All'
+                ? allRowData
+                : allRowData.filter(row => row.protein === activeProtein);
+
+            filteredData.forEach(row => {
+                const tr = document.createElement('tr');
+
+                // Create cells safely using textContent to prevent XSS
+                const createCell = (text) => {
+                    const td = document.createElement('td');
+                    td.textContent = text;
+                    return td;
+                };
+
+                tr.appendChild(createCell(row.protein));
+                tr.appendChild(createCell(row.mutation));
+                tr.appendChild(createCell(row.reference_accession));
+                tr.appendChild(createCell(row.effect));
+                tr.appendChild(createCell(row.notes));
+
+                // Create link cell safely
+                const linkCell = document.createElement('td');
+                const link = document.createElement('a');
+                link.href = row.doi_url;
+                link.target = '_blank';
+                link.rel = 'noopener noreferrer';
+                link.textContent = row.reference;
+                linkCell.appendChild(link);
+                tr.appendChild(linkCell);
+
+                tbody.appendChild(tr);
+            });
+
+            updateCount(filteredData.length, filteredData.length);
+        }
+
+        function updateCount(visible, total) {
+            const allTotal = allRowData.length;
+            let text;
+            if (activeProtein === 'All') {
+                text = visible === allTotal ? `${allTotal} entries` : `Showing ${visible} of ${allTotal} entries`;
+            } else {
+                text = `${visible} ${activeProtein} entries`;
+            }
+            document.getElementById('recordCount').innerText = text;
+        }
+
+        function filterTable() {
+            const input = document.getElementById('searchInput');
+            const filter = input.value.toUpperCase();
+            const tbody = document.getElementById('mutation-table').querySelector('tbody');
+            const trs = tbody.getElementsByTagName('tr');
+            let visibleCount = 0;
+            let totalInTab = 0;
+
+            // Count total in current tab
+            const filteredData = activeProtein === 'All'
+                ? allRowData
+                : allRowData.filter(row => row.protein === activeProtein);
+            totalInTab = filteredData.length;
+
+            for (let i = 0; i < trs.length; i++) {
+                const tdText = trs[i].innerText.toUpperCase();
+                if (tdText.indexOf(filter) > -1) {
+                    trs[i].style.display = "";
+                    visibleCount++;
+                } else {
+                    trs[i].style.display = "none";
+                }
+            }
+
+            const text = visibleCount === totalInTab
+                ? `${totalInTab} entries`
+                : `Showing ${visibleCount} of ${totalInTab} entries`;
+            document.getElementById('recordCount').innerText = text;
+        }
+
+        function sortTable(n) {
+            const table = document.getElementById("mutation-table");
+            let switching = true;
+            let dir = "asc";
+            let switchcount = 0;
+
+            // Reset header classes
+            const headers = table.querySelectorAll("th");
+            headers.forEach(h => h.classList.remove("asc", "desc"));
+
+            while (switching) {
+                switching = false;
+                const rows = table.rows;
+
+                for (let i = 1; i < (rows.length - 1); i++) {
+                    let shouldSwitch = false;
+                    const x = rows[i].getElementsByTagName("TD")[n];
+                    const y = rows[i + 1].getElementsByTagName("TD")[n];
+
+                    if (!x || !y) continue;
+
+                    const xContent = x.innerText.toLowerCase();
+                    const yContent = y.innerText.toLowerCase();
+
+                    if (dir == "asc") {
+                        if (xContent > yContent) {
+                            shouldSwitch = true;
+                            break;
+                        }
+                    } else if (dir == "desc") {
+                        if (xContent < yContent) {
+                            shouldSwitch = true;
+                            break;
+                        }
+                    }
+                }
+
+                if (shouldSwitch) {
+                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                    switching = true;
+                    switchcount++;
+                } else {
+                    if (switchcount == 0 && dir == "asc") {
+                        dir = "desc";
+                        switching = true;
+                    }
+                }
+            }
+
+            // Set active class
+            headers[n].classList.add(dir);
+        }
+
+        async function showLastUpdated() {
+            try {
+                const response = await fetch('api/metadata.json');
+                if (response.ok) {
+                    const metadata = await response.json();
+                    if (metadata.last_updated) {
+                        document.getElementById('updated-date').innerText = `Data last updated: ${metadata.last_updated}`;
+                    }
+                }
+            } catch (e) {
+                console.log("Error fetching metadata:", e);
+                document.getElementById('updated-date').innerText = `Data last updated: --`;
+            }
+        }
+
+        loadTable();
+        showLastUpdated();
+    </script>
+
+</body>
+
+</html>

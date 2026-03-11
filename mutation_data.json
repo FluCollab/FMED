@@ -1,0 +1,8 @@
+{
+  "protein": "NA",
+  "mutation": "H275Y",
+  "reference_accession": "CY123456",
+  "effect": "Drug resistance",
+  "doi": "10.1128/jvi.01234-21",
+  "notes": "This is a test note."
+}
