@@ -11,10 +11,12 @@ def parse_issue_form(body_text):
     GitHub Issue Forms structure the body with markdown headers corresponding
     to the field labels defined in the YAML template.
     """
+    from utils import normalize_line_endings
+    
     data = {}
     
-    # Split by lines and normalize line endings
-    lines = body_text.replace('\r\n', '\n').split('\n')
+    # Normalize line endings (CRLF/CR -> LF) for cross-platform compatibility
+    lines = normalize_line_endings(body_text).split('\n')
     
     current_key = None
     current_value = []
@@ -57,6 +59,8 @@ def main():
     
     # Check for direct TSV file mode
     if sys.argv[1] == "--tsv-file":
+        from utils import normalize_line_endings
+        
         if len(sys.argv) < 3:
              print("Error: Missing file path for --tsv-file")
              sys.exit(1)
@@ -64,7 +68,8 @@ def main():
         file_path = sys.argv[2]
         try:
             with open(file_path, 'r', encoding='utf-8') as f:
-                normalized_data["tsv_data"] = f.read()
+                # Normalize line endings (CRLF/CR -> LF) for cross-platform compatibility
+                normalized_data["tsv_data"] = normalize_line_endings(f.read())
         except Exception as e:
             print(f"Error reading TSV file: {e}")
             sys.exit(1)
@@ -115,6 +120,7 @@ def main():
             print(f"I found an attachment URL: {file_url}")
             try:
                 import requests
+                from utils import normalize_line_endings
                 
                 headers = {}
                 token = os.environ.get("GH_TOKEN")
@@ -131,7 +137,8 @@ def main():
                     print(f"Response: {response.text[:200]}") # Print first 200 chars for debug
                     sys.exit(1)
                     
-                tsv_content = response.text
+                # Normalize line endings (CRLF/CR -> LF) for cross-platform compatibility
+                tsv_content = normalize_line_endings(response.text)
                 print("Successfully downloaded attachment content.")
             except Exception as e:
                 print(f"❌ Error downloading attachment: {e}")

@@ -29,7 +29,11 @@ def decode_base64(encoded_text):
 
 def parse_issue_body(issue_body):
     """Parses issue body text into a dictionary while ensuring column order."""
+    from utils import normalize_line_endings
+    
     issue_body = decode_base64(issue_body)
+    # Normalize line endings (CRLF/CR -> LF) for cross-platform compatibility
+    issue_body = normalize_line_endings(issue_body)
     issue_data = {}
     issue_lines = issue_body.strip().split("\n")
 

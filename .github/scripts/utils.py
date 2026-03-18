@@ -38,6 +38,29 @@ VALID_EFFECTS = [
 
 
 # =============================================================================
+# Text Normalization Functions
+# =============================================================================
+
+def normalize_line_endings(text):
+    """
+    Normalizes line endings in text to Unix-style (LF).
+    
+    Handles Windows (CRLF), Mac OS Classic (CR), and Unix (LF) line endings.
+    This ensures consistent parsing regardless of the source platform.
+    
+    Args:
+        text: String with potentially mixed line endings
+        
+    Returns:
+        String with normalized LF line endings
+    """
+    if not text:
+        return text
+    # Replace Windows CRLF with LF, then any remaining CR with LF
+    return text.replace('\r\n', '\n').replace('\r', '\n')
+
+
+# =============================================================================
 # Validation Functions
 # =============================================================================
 

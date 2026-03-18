@@ -28,8 +28,10 @@ def parse_issue_body(body_text):
     """
     Parses a GitHub Issue Form body (Markdown) into a dictionary.
     """
+    from utils import normalize_line_endings
+    
     data = {}
-    lines = body_text.replace('\r\n', '\n').split('\n')
+    lines = normalize_line_endings(body_text).split('\n')
     
     current_key = None
     current_value = []
@@ -60,6 +62,8 @@ def parse_issue_body(body_text):
 
 def download_attachment(url):
     """Downloads TSV content from a GitHub attachment URL."""
+    from utils import normalize_line_endings
+    
     headers = {}
     token = os.environ.get("GH_TOKEN")
     if token:
@@ -69,7 +73,8 @@ def download_attachment(url):
     if response.status_code != 200:
         raise Exception(f"Failed to download attachment: HTTP {response.status_code}")
     
-    return response.text
+    # Normalize line endings (CRLF/CR -> LF) for cross-platform compatibility
+    return normalize_line_endings(response.text)
 
 
 def parse_tsv_content(tsv_content):
@@ -81,6 +86,10 @@ def parse_tsv_content(tsv_content):
         - rows: List of dictionaries with parsed data
         - header_error: Error message if header is invalid, None otherwise
     """
+    from utils import normalize_line_endings
+    
+    # Normalize line endings (CRLF/CR -> LF) for cross-platform compatibility
+    tsv_content = normalize_line_endings(tsv_content)
     lines = [line.strip() for line in tsv_content.strip().split('\n') if line.strip()]
     
     if not lines:
