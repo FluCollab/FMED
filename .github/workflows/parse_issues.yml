@@ -4,6 +4,9 @@ on:
   issues:
     types: [closed]
 
+permissions:
+  issues: read
+  contents: write
 
 jobs:
   disabled_job:

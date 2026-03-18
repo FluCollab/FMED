@@ -4,6 +4,10 @@ on:
   issues:
     types: [labeled]
 
+permissions:
+  issues: write
+  contents: write
+
 jobs:
   merge_bulk:
     runs-on: ubuntu-latest
@@ -81,8 +85,8 @@ jobs:
         run: |
           VALID_COUNT="${{ steps.validate.outputs.valid_count }}"
           gh issue comment ${{ github.event.issue.number }} --body "✅ **Bulk Submission Merged!**
-
-$VALID_COUNT mutation(s) have been added to the database. They will appear on the [database viewer](https://centre-for-virus-research.github.io/FMED/) shortly."
+          
+          $VALID_COUNT mutation(s) have been added to the database. They will appear on the [database viewer](https://centre-for-virus-research.github.io/FMED/) shortly."
 
       - name: Close Issue
         env:
@@ -96,6 +100,6 @@ $VALID_COUNT mutation(s) have been added to the database. They will appear on th
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           gh issue comment ${{ github.event.issue.number }} --body "❌ **Merge Failed**
-
-There was an error merging the mutations. Please check the workflow logs for details."
+          
+          There was an error merging the mutations. Please check the workflow logs for details."
           gh issue edit ${{ github.event.issue.number }} --remove-label "accepted"

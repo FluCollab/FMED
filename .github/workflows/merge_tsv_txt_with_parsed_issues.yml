@@ -4,6 +4,10 @@ on:
   issues:
     types: [closed]
 
+permissions:
+  issues: read
+  contents: write
+
 jobs:
   disabled_job:
     if: false  # This prevents the job from running

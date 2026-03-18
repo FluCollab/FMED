@@ -5,6 +5,10 @@ on:
     types:
       - closed
 
+permissions:
+  issues: write
+  contents: write
+
 jobs:
   merge_issues:
     runs-on: ubuntu-latest
