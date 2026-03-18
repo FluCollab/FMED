@@ -297,9 +297,39 @@ def get_doi_metadata(doi, verbose=True):
 # TSV File Functions
 # =============================================================================
 
+def detect_file_encoding(file_path):
+    """
+    Attempts to detect the encoding of a file by trying common encodings.
+    
+    Args:
+        file_path: Path to the file
+        
+    Returns:
+        Tuple of (content, encoding_used) or (None, None) if all fail
+    """
+    # Try encodings in order of likelihood
+    encodings = ['utf-8', 'utf-8-sig', 'latin-1', 'cp1252', 'iso-8859-1', 'mac_roman']
+    
+    for encoding in encodings:
+        try:
+            with open(file_path, 'r', encoding=encoding) as f:
+                content = f.read()
+                # Normalize line endings for cross-platform compatibility
+                content = normalize_line_endings(content)
+                return content, encoding
+        except (UnicodeDecodeError, UnicodeError):
+            continue
+        except Exception as e:
+            # Other errors should be raised
+            raise
+    
+    return None, None
+
+
 def read_tsv(file_path, normalize_columns=True):
     """
     Reads a TSV file into a list of dictionaries.
+    Automatically detects file encoding and normalizes line endings.
     
     Args:
         file_path: Path to the TSV file
@@ -313,25 +343,35 @@ def read_tsv(file_path, normalize_columns=True):
     if not os.path.exists(file_path):
         return data
     
-    with open(file_path, "r", encoding="utf-8") as file:
-        reader = csv.DictReader(file, delimiter="\t")
-        
-        for row in reader:
-            if normalize_columns:
-                entry = {}
-                for col in REQUIRED_COLUMNS:
-                    val = row.get(col)
-                    
-                    # Handle doi -> source_publication mapping
-                    if val is None and col == "source_publication":
-                        val = row.get("doi", "")
-                    elif val is None:
-                        val = ""
-                    
-                    entry[col] = val
-                data.append(entry)
-            else:
-                data.append(dict(row))
+    # Detect encoding and read file content
+    content, encoding = detect_file_encoding(file_path)
+    
+    if content is None:
+        raise UnicodeDecodeError(
+            'unknown', b'', 0, 1,
+            f'Unable to decode file {file_path} with any common encoding'
+        )
+    
+    # Parse TSV content using csv.DictReader
+    import io
+    reader = csv.DictReader(io.StringIO(content), delimiter="\t")
+    
+    for row in reader:
+        if normalize_columns:
+            entry = {}
+            for col in REQUIRED_COLUMNS:
+                val = row.get(col)
+                
+                # Handle doi -> source_publication mapping
+                if val is None and col == "source_publication":
+                    val = row.get("doi", "")
+                elif val is None:
+                    val = ""
+                
+                entry[col] = val
+            data.append(entry)
+        else:
+            data.append(dict(row))
     
     return data
 
