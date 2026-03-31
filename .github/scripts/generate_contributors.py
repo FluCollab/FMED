@@ -35,6 +35,16 @@ if not REPO:
 API_URL = f"https://api.github.com/repos/{REPO}/issues"
 OUTPUT_FILE = "docs/api/contributors.json"
 
+def load_existing_data():
+    """Load existing contributors.json if it exists."""
+    if os.path.exists(OUTPUT_FILE):
+        try:
+            with open(OUTPUT_FILE, 'r') as f:
+                return json.load(f)
+        except Exception as e:
+            print(f"Warning: Could not load existing file: {e}")
+    return None
+
 def fetch_accepted_issues():
     """Fetch all closed issues with 'accepted' label."""
     headers = {
@@ -91,8 +101,12 @@ def parse_mutations_from_issue(issue):
         # Single mutation submission
         return 1
 
-def generate_contributor_stats(issues):
-    """Generate contributor statistics from issues."""
+def generate_contributor_stats(issues,existing_contributors=None, processed_issue_ids=None):
+    """Generate contributor statistics from issues (incremental update support)."""
+    if processed_issue_ids is None:
+        processed_issue_ids = set()
+    
+    # Initialize  contributors from existing data or start fresh
     contributors = defaultdict(lambda: {
         'username': '',
         'name': '',
@@ -101,10 +115,24 @@ def generate_contributor_stats(issues):
         'mutations_contributed': 0,
         'issues_submitted': 0,
         'first_contribution': None,
-        'last_contribution': None
+        'last_contribution': None,
+        'issue_ids': []
     })
     
+    # Load existing contributors
+    if existing_contributors:
+        for c in existing_contributors:
+            contributors[c['username']] = c.copy()
+            if 'issue_ids' not in contributors[c['username']]:
+                contributors[c['username']]['issue_ids'] = []
+    
     for issue in issues:
+        issue_id = issue['number']
+        
+        # Skip if already processed
+        if issue_id in processed_issue_ids:
+            continue
+        
         user = issue.get('user', {})
         username = user.get('login', 'unknown')
         
@@ -114,10 +142,11 @@ def generate_contributor_stats(issues):
         contributor['avatar_url'] = user.get('avatar_url', '')
         contributor['profile_url'] = user.get('html_url', '')
         
-        # Count mutations
+        # Count mutations for this new issue
         mutations_count = parse_mutations_from_issue(issue)
         contributor['mutations_contributed'] += mutations_count
         contributor['issues_submitted'] += 1
+        contributor['issue_ids'].append(issue_id)
         
         # Track dates
         closed_at = issue.get('closed_at')
@@ -127,19 +156,42 @@ def generate_contributor_stats(issues):
             if not contributor['last_contribution'] or closed_at > contributor['last_contribution']:
                 contributor['last_contribution'] = closed_at
     
-    # Convert to list and sort by mutations contributed
+    # Convert to list and sort by most recent contribution
     contributor_list = list(contributors.values())
-    contributor_list.sort(key=lambda x: x['mutations_contributed'], reverse=True)
+    contributor_list.sort(key=lambda x: x['last_contribution'] or '', reverse=True)
     
     return contributor_list
 
 def main():
-    print("Fetching accepted issues from GitHub...")
-    issues = fetch_accepted_issues()
-    print(f"Found {len(issues)} accepted issues")
+    # Load existing data for incremental updates
+    existing_data = load_existing_data()
     
-    print("Generating contributor statistics...")
-    contributors = generate_contributor_stats(issues)
+    if existing_data:
+        print(f"📂 Loaded existing data (last updated: {existing_data.get('generated_at', 'unknown')})")  
+        existing_contributors = existing_data.get('contributors', [])
+        
+        # Get all processed issue IDs  
+        processed_issue_ids = set()
+        for c in existing_contributors:
+            if 'issue_ids' in c:
+                processed_issue_ids.update(c['issue_ids'])
+        
+        print(f"🔄 Fetching all accepted issues to check for updates...")
+        issues = fetch_accepted_issues()
+        unprocessed = [i for i in issues if i['number'] not in processed_issue_ids]
+        print(f"Found {len(issues)} total accepted issues, {len(unprocessed)} new")
+        
+        print("📊 Updating contributor statistics...")
+        contributors = generate_contributor_stats(issues, existing_contributors, processed_issue_ids)
+    else:
+        print("🆕 No existing data found, generating from scratch...")
+        print("Fetching accepted issues from GitHub...")
+        issues = fetch_accepted_issues()
+        print(f"Found {len(issues)} accepted issues")
+        
+        print("Generating contributor statistics...")
+        contributors = generate_contributor_stats(issues)
+    
     print(f"Found {len(contributors)} contributors")
     
     # Create output structure

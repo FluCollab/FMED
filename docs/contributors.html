@@ -132,11 +132,6 @@
             text-align: center;
         }
 
-        .contributor-rank.top3 {
-            color: #f39c12;
-            font-size: 2em;
-        }
-
         .contributor-avatar {
             width: 60px;
             height: 60px;
@@ -274,12 +269,10 @@
                 const container = document.getElementById('contributors-container');
                 container.innerHTML = data.contributors.map((contributor, index) => {
                     const rank = index + 1;
-                    const rankClass = rank <= 3 ? 'top3' : '';
-                    const medal = rank === 1 ? '🥇' : rank === 2 ? '🥈' : rank === 3 ? '🥉' : '';
                     
                     return `
                         <div class="contributor-card">
-                            <div class="contributor-rank ${rankClass}">${medal || '#' + rank}</div>
+                            <div class="contributor-rank">#${rank}</div>
                             <img src="${contributor.avatar_url}" alt="${contributor.username}" class="contributor-avatar">
                             <div class="contributor-info">
                                 <div class="contributor-name">
