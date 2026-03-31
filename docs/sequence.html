@@ -189,6 +189,27 @@
         .error {
             color: #e74c3c;
         }
+
+        /* Navigation */
+        .nav-links {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .nav-links a {
+            display: inline-block;
+            margin: 0 10px;
+            padding: 8px 16px;
+            background-color: #ecf0f1;
+            color: var(--accent);
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-links a:hover {
+            background-color: #bdc3c7;
+        }
     </style>
 </head>
 
@@ -199,14 +220,13 @@
         <div class="updated-date" id="updated-date"></div>
     </div>
 
-    <div class="optionButtons">
-        <span class="switcherDiv">
-            <span class="dataDiv_switcher_helper">view:</span>
-            <a id="nav-table" class="dataDiv_switcher" href="index.html">Table</a>
-            <a id="nav-sequence" class="dataDiv_switcher active" href="sequence.html">Sequence</a>
-            <a id="nav-contributors" class="dataDiv_switcher" href="contributors.html">Contributors</a>
-        </span>
+    <div class="nav-links">
+        <a href="index.html">Table View</a>
+        <a href="sequence.html" style="background-color: #3498db; color: white;">Sequence View</a>
+        <a href="contributors.html">Contributors</a>
+    </div>
 
+    <div class="optionButtons">
         <span class="proteinSwitcherDiv" id="protein-switcher">
             <span class="protein_switcher_helper">protein:</span>
             <!-- Populated via JS -->
