@@ -103,3 +103,6 @@ HA	G241E	JQ858372	Antigenic escape mutation	10.1016/j.virusres.2012.03.003	A/Mos
 HA	K298M	JQ858372	Antigenic escape mutation	10.1016/j.virusres.2012.03.003	A/Moscow/IIV01/2009
 HA	S88Y	KF860846	Antigenic escape mutation	https://doi.org/10.1099/vir.0.061598-0	A/Extremadura/RR6530/2010
 HA	K136N	KF860846	Antigenic escape mutation	https://doi.org/10.1099/vir.0.061598-0	A/Extremadura/RR6530/2010
+HA	T89K	FJ966082	Antigenic escape mutation	Â https://doi.org/10.1099/vir.0.061598-0	A/California/04/2009/E3
+HA	A388V	FJ966082	Antigenic escape mutation	"""https://doi.org/10.1038/s41598-017-14931-7 , https://www.nature.com/articles/s41591-020-0937-x"""	A/California/04/2009/E3
+HA	K136N	KF860846	Antigenic escape mutation	Â https://doi.org/10.1099/vir.0.061598-0	A/Extremadura/RR6530/2010
