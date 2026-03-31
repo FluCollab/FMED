@@ -68,6 +68,7 @@ jobs:
       - name: Regenerate API Files
         run: |
           python .github/scripts/generate_api.py
+          python .github/scripts/generate_contributors.py
 
       - name: Commit and Push Changes
         run: |

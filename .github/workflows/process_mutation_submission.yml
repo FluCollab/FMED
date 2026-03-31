@@ -121,6 +121,7 @@ jobs:
           
           # Regenerate Static API JSON files
           python .github/scripts/generate_api.py
+          python .github/scripts/generate_contributors.py
           git add docs/api/*.json docs/api/protein/*.json
           
           if git diff --staged --quiet; then

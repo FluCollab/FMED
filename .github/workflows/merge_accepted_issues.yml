@@ -115,6 +115,7 @@ jobs:
         if: env.ACCEPTED == 'true'
         run: |
           python .github/scripts/generate_api.py
+          python .github/scripts/generate_contributors.py
 
       - name: Commit and Push Changes
         if: env.ACCEPTED == 'true'
