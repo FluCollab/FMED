@@ -1,0 +1,1562 @@
+[
+  {
+    "protein": "HA",
+    "mutation": "K180Q",
+    "reference_accession": "FJ966082",
+    "effect": "Antigenic escape mutation",
+    "doi": "https://www.pnas.org/doi/full/10.1073/pnas.1409171111#sec-3",
+    "notes": "A/California/07/2009",
+    "metadata": {
+      "authors": "Susanne L. Linderman, Benjamin S. Chambers, Seth J. Zost, Kaela Parkhouse, Yang Li, Christin Herrmann, Ali H. Ellebedy, Donald M. Carter, Sarah F. Andrews, Nai-Ying Zheng, Min Huang, Yunping Huang, Donna Strauss, Beth H. Shaz, Richard L. Hodinka, Gustavo Reyes-Ter\u00e1n, Ted M. Ross, Patrick C. Wilson, Rafi Ahmed, Jesse D. Bloom, Scott E. Hensley",
+      "year": "2014",
+      "title": "Potential antigenic explanation for atypical H1N1 infections among middle-aged adults during the 2013\u20132014 influenza season",
+      "journal": "Proceedings of the National Academy of Sciences",
+      "doi_url": "https://doi.org/https://www.pnas.org/doi/full/10.1073/pnas.1409171111#sec-3"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "S179N",
+    "reference_accession": "FJ966082",
+    "effect": "Antigenic escape mutation",
+    "doi": "https://doi.org/10.1038/s41598-017-17986-8",
+    "notes": "A/California/07/2009 (CA/09)",
+    "metadata": {
+      "authors": "Atsuhiro Yasuhara, Seiya Yamayoshi, Priyanka Soni, Toru Takenaga, Chiharu Kawakami, Emi Takashita, Yuko Sakai-Tagawa, Ryuta Uraki, Mutsumi Ito, Kiyoko Iwatsuki-Horimoto, Tadahiro Sasaki, Kazuyoshi Ikuta, Shinya Yamada, Yoshihiro Kawaoka",
+      "year": "2017",
+      "title": "Diversity of antigenic mutants of influenza A(H1N1)pdm09 virus escaped from human monoclonal antibodies",
+      "journal": "Scientific Reports",
+      "doi_url": "https://doi.org/https://doi.org/10.1038/s41598-017-17986-8"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "G172E",
+    "reference_accession": "FJ966082",
+    "effect": "Antigenic escape mutation",
+    "doi": "https://doi.org/10.1371/journal.ppat.1005702",
+    "notes": "A/California/04/2009/E3",
+    "metadata": {
+      "authors": "Ning Chai, Lee R. Swem, Mike Reichelt, Haiyin Chen-Harris, Elizabeth Luis, Summer Park, Ashley Fouts, Patrick Lupardus, Thomas D. Wu, Olga Li, Jacqueline McBride, Michael Lawrence, Min Xu, Man-Wah Tan",
+      "year": "2016",
+      "title": "Two Escape Mechanisms of Influenza A Virus to a Broadly Neutralizing Stalk-Binding Antibody",
+      "journal": "PLOS Pathogens",
+      "doi_url": "https://doi.org/https://doi.org/10.1371/journal.ppat.1005702"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "V237M",
+    "reference_accession": "FJ966082",
+    "effect": "Antigenic escape mutation",
+    "doi": "https://doi.org/10.1038/s41598-017-14931-7",
+    "notes": "A/Extremadura/RR6530/2010",
+    "metadata": {
+      "authors": "Christopher S. Anderson, Sandra Ortega, Francisco A. Chaves, Amelia M. Clark, Hongmei Yang, David J. Topham, Marta L. DeDiego",
+      "year": "2017",
+      "title": "Natural and directed antigenic drift of the H1 influenza virus hemagglutinin stalk domain",
+      "journal": "Scientific Reports",
+      "doi_url": "https://doi.org/https://doi.org/10.1038/s41598-017-14931-7"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "T89A",
+    "reference_accession": "FJ966082",
+    "effect": "Antigenic escape mutation",
+    "doi": "https://doi.org/10.1038/s41598-017-14931-7",
+    "notes": "A/California/04/2009/E3",
+    "metadata": {
+      "authors": "Christopher S. Anderson, Sandra Ortega, Francisco A. Chaves, Amelia M. Clark, Hongmei Yang, David J. Topham, Marta L. DeDiego",
+      "year": "2017",
+      "title": "Natural and directed antigenic drift of the H1 influenza virus hemagglutinin stalk domain",
+      "journal": "Scientific Reports",
+      "doi_url": "https://doi.org/https://doi.org/10.1038/s41598-017-14931-7"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "S160G",
+    "reference_accession": "FJ966082",
+    "effect": "Antigenic escape mutation",
+    "doi": "https://doi.org/10.1038/s41598-017-14931-7",
+    "notes": "A/California/04/2009/E3",
+    "metadata": {
+      "authors": "Christopher S. Anderson, Sandra Ortega, Francisco A. Chaves, Amelia M. Clark, Hongmei Yang, David J. Topham, Marta L. DeDiego",
+      "year": "2017",
+      "title": "Natural and directed antigenic drift of the H1 influenza virus hemagglutinin stalk domain",
+      "journal": "Scientific Reports",
+      "doi_url": "https://doi.org/https://doi.org/10.1038/s41598-017-14931-7"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "T89K",
+    "reference_accession": "FJ966082",
+    "effect": "Antigenic escape mutation",
+    "doi": "https://doi.org/10.1099/vir.0.061598-0",
+    "notes": "A/California/04/2009/E3",
+    "metadata": {
+      "authors": "Blanca Garc\u00eda-Barreno, Teresa Delgado, Sonia Benito, Inmaculada Casas, Francisco Pozo, Mar\u00eda Teresa Cuevas, Vicente Mas, Alfonsina Trento, Ariel Rodriguez-Frandsen, Ana Falc\u00f3n, Juan Ort\u00edn, Amelia Nieto, Jos\u00e9 A. Melero",
+      "year": "2014",
+      "title": "Characterization of an enhanced antigenic change in the pandemic 2009 H1N1 influenza virus haemagglutinin",
+      "journal": "Journal of General Virology",
+      "doi_url": "https://doi.org/https://doi.org/10.1099/vir.0.061598-0"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "V41I",
+    "reference_accession": "FJ966082",
+    "effect": "Antigenic escape mutation",
+    "doi": "https://doi.org/10.1038/s41598-017-14931-7",
+    "notes": "A/California/04/2009/E3",
+    "metadata": {
+      "authors": "Christopher S. Anderson, Sandra Ortega, Francisco A. Chaves, Amelia M. Clark, Hongmei Yang, David J. Topham, Marta L. DeDiego",
+      "year": "2017",
+      "title": "Natural and directed antigenic drift of the H1 influenza virus hemagglutinin stalk domain",
+      "journal": "Scientific Reports",
+      "doi_url": "https://doi.org/https://doi.org/10.1038/s41598-017-14931-7"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "A388V",
+    "reference_accession": "FJ966082",
+    "effect": "Antigenic escape mutation",
+    "doi": "https://doi.org/10.1038/s41598-017-14931-7",
+    "notes": "A/California/04/2009/E3",
+    "metadata": {
+      "authors": "Christopher S. Anderson, Sandra Ortega, Francisco A. Chaves, Amelia M. Clark, Hongmei Yang, David J. Topham, Marta L. DeDiego",
+      "year": "2017",
+      "title": "Natural and directed antigenic drift of the H1 influenza virus hemagglutinin stalk domain",
+      "journal": "Scientific Reports",
+      "doi_url": "https://doi.org/https://doi.org/10.1038/s41598-017-14931-7"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "V466I",
+    "reference_accession": "FJ966082",
+    "effect": "Antigenic escape mutation",
+    "doi": "https://doi.org/10.1038/s41598-017-14931-7",
+    "notes": "A/California/04/2009/E3",
+    "metadata": {
+      "authors": "Christopher S. Anderson, Sandra Ortega, Francisco A. Chaves, Amelia M. Clark, Hongmei Yang, David J. Topham, Marta L. DeDiego",
+      "year": "2017",
+      "title": "Natural and directed antigenic drift of the H1 influenza virus hemagglutinin stalk domain",
+      "journal": "Scientific Reports",
+      "doi_url": "https://doi.org/https://doi.org/10.1038/s41598-017-14931-7"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "R526G",
+    "reference_accession": "FJ966082",
+    "effect": "Antigenic escape mutation",
+    "doi": "https://doi.org/10.1038/s41598-017-14931-7",
+    "notes": "A/California/04/2009/E3",
+    "metadata": {
+      "authors": "Christopher S. Anderson, Sandra Ortega, Francisco A. Chaves, Amelia M. Clark, Hongmei Yang, David J. Topham, Marta L. DeDiego",
+      "year": "2017",
+      "title": "Natural and directed antigenic drift of the H1 influenza virus hemagglutinin stalk domain",
+      "journal": "Scientific Reports",
+      "doi_url": "https://doi.org/https://doi.org/10.1038/s41598-017-14931-7"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "R91G",
+    "reference_accession": "NC_002017.1",
+    "effect": "Antigenic escape mutation",
+    "doi": "10.1016/0092-8674(82)90135-0",
+    "notes": "A/PR/8/34",
+    "metadata": {
+      "authors": "Andrew J. Caton, George G. Brownlee, Jonathan W. Yewdell, Walter Gerhard",
+      "year": "1982",
+      "title": "The antigenic structure of the influenza virus A/PR/8/34 hemagglutinin (H1 subtype)",
+      "journal": "Cell",
+      "doi_url": "https://doi.org/10.1016/0092-8674(82)90135-0"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "L87P",
+    "reference_accession": "NC_002017.1",
+    "effect": "Antigenic escape mutation",
+    "doi": "10.1016/0092-8674(82)90135-0",
+    "notes": "A/PR/8/34",
+    "metadata": {
+      "authors": "Andrew J. Caton, George G. Brownlee, Jonathan W. Yewdell, Walter Gerhard",
+      "year": "1982",
+      "title": "The antigenic structure of the influenza virus A/PR/8/34 hemagglutinin (H1 subtype)",
+      "journal": "Cell",
+      "doi_url": "https://doi.org/10.1016/0092-8674(82)90135-0"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "V90E",
+    "reference_accession": "NC_002017.1",
+    "effect": "Antigenic escape mutation",
+    "doi": "10.1016/0092-8674(82)90135-0",
+    "notes": "A/PR/8/34",
+    "metadata": {
+      "authors": "Andrew J. Caton, George G. Brownlee, Jonathan W. Yewdell, Walter Gerhard",
+      "year": "1982",
+      "title": "The antigenic structure of the influenza virus A/PR/8/34 hemagglutinin (H1 subtype)",
+      "journal": "Cell",
+      "doi_url": "https://doi.org/10.1016/0092-8674(82)90135-0"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "L88P",
+    "reference_accession": "NC_002017.1",
+    "effect": "Antigenic escape mutation",
+    "doi": "10.1016/0092-8674(82)90135-0",
+    "notes": "A/PR/8/34",
+    "metadata": {
+      "authors": "Andrew J. Caton, George G. Brownlee, Jonathan W. Yewdell, Walter Gerhard",
+      "year": "1982",
+      "title": "The antigenic structure of the influenza virus A/PR/8/34 hemagglutinin (H1 subtype)",
+      "journal": "Cell",
+      "doi_url": "https://doi.org/10.1016/0092-8674(82)90135-0"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "S92P",
+    "reference_accession": "NC_002017.1",
+    "effect": "Antigenic escape mutation",
+    "doi": "10.1016/0092-8674(82)90135-0",
+    "notes": "A/PR/8/34",
+    "metadata": {
+      "authors": "Andrew J. Caton, George G. Brownlee, Jonathan W. Yewdell, Walter Gerhard",
+      "year": "1982",
+      "title": "The antigenic structure of the influenza virus A/PR/8/34 hemagglutinin (H1 subtype)",
+      "journal": "Cell",
+      "doi_url": "https://doi.org/10.1016/0092-8674(82)90135-0"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "E132K",
+    "reference_accession": "NC_002017.1",
+    "effect": "Antigenic escape mutation",
+    "doi": "10.1016/0092-8674(82)90135-0",
+    "notes": "A/PR/8/34",
+    "metadata": {
+      "authors": "Andrew J. Caton, George G. Brownlee, Jonathan W. Yewdell, Walter Gerhard",
+      "year": "1982",
+      "title": "The antigenic structure of the influenza virus A/PR/8/34 hemagglutinin (H1 subtype)",
+      "journal": "Cell",
+      "doi_url": "https://doi.org/10.1016/0092-8674(82)90135-0"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "P141S",
+    "reference_accession": "NC_002017.1",
+    "effect": "Antigenic escape mutation",
+    "doi": "10.1016/0092-8674(82)90135-0",
+    "notes": "A/PR/8/34",
+    "metadata": {
+      "authors": "Andrew J. Caton, George G. Brownlee, Jonathan W. Yewdell, Walter Gerhard",
+      "year": "1982",
+      "title": "The antigenic structure of the influenza virus A/PR/8/34 hemagglutinin (H1 subtype)",
+      "journal": "Cell",
+      "doi_url": "https://doi.org/10.1016/0092-8674(82)90135-0"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "N142Y",
+    "reference_accession": "NC_002017.1",
+    "effect": "Antigenic escape mutation",
+    "doi": "10.1016/0092-8674(82)90135-0",
+    "notes": "A/PR/8/34",
+    "metadata": {
+      "authors": "Andrew J. Caton, George G. Brownlee, Jonathan W. Yewdell, Walter Gerhard",
+      "year": "1982",
+      "title": "The antigenic structure of the influenza virus A/PR/8/34 hemagglutinin (H1 subtype)",
+      "journal": "Cell",
+      "doi_url": "https://doi.org/10.1016/0092-8674(82)90135-0"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "S153P",
+    "reference_accession": "NC_002017.1",
+    "effect": "Antigenic escape mutation",
+    "doi": "10.1016/0092-8674(82)90135-0",
+    "notes": "A/PR/8/34",
+    "metadata": {
+      "authors": "Andrew J. Caton, George G. Brownlee, Jonathan W. Yewdell, Walter Gerhard",
+      "year": "1982",
+      "title": "The antigenic structure of the influenza virus A/PR/8/34 hemagglutinin (H1 subtype)",
+      "journal": "Cell",
+      "doi_url": "https://doi.org/10.1016/0092-8674(82)90135-0"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "E169G",
+    "reference_accession": "NC_002017.1",
+    "effect": "Antigenic escape mutation",
+    "doi": "10.1016/0092-8674(82)90135-0",
+    "notes": "A/PR/8/34",
+    "metadata": {
+      "authors": "Andrew J. Caton, George G. Brownlee, Jonathan W. Yewdell, Walter Gerhard",
+      "year": "1982",
+      "title": "The antigenic structure of the influenza virus A/PR/8/34 hemagglutinin (H1 subtype)",
+      "journal": "Cell",
+      "doi_url": "https://doi.org/10.1016/0092-8674(82)90135-0"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "E171V",
+    "reference_accession": "NC_002017.1",
+    "effect": "Antigenic escape mutation",
+    "doi": "10.1016/0092-8674(82)90135-0",
+    "notes": "A/PR/8/34",
+    "metadata": {
+      "authors": "Andrew J. Caton, George G. Brownlee, Jonathan W. Yewdell, Walter Gerhard",
+      "year": "1982",
+      "title": "The antigenic structure of the influenza virus A/PR/8/34 hemagglutinin (H1 subtype)",
+      "journal": "Cell",
+      "doi_url": "https://doi.org/10.1016/0092-8674(82)90135-0"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "V182A",
+    "reference_accession": "NC_002017.1",
+    "effect": "Antigenic escape mutation",
+    "doi": "10.1016/0092-8674(82)90135-0",
+    "notes": "A/PR/8/34",
+    "metadata": {
+      "authors": "Andrew J. Caton, George G. Brownlee, Jonathan W. Yewdell, Walter Gerhard",
+      "year": "1982",
+      "title": "The antigenic structure of the influenza virus A/PR/8/34 hemagglutinin (H1 subtype)",
+      "journal": "Cell",
+      "doi_url": "https://doi.org/10.1016/0092-8674(82)90135-0"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "G186V",
+    "reference_accession": "NC_002017.1",
+    "effect": "Antigenic escape mutation",
+    "doi": "10.1016/0092-8674(82)90135-0",
+    "notes": "A/PR/8/34",
+    "metadata": {
+      "authors": "Andrew J. Caton, George G. Brownlee, Jonathan W. Yewdell, Walter Gerhard",
+      "year": "1982",
+      "title": "The antigenic structure of the influenza virus A/PR/8/34 hemagglutinin (H1 subtype)",
+      "journal": "Cell",
+      "doi_url": "https://doi.org/10.1016/0092-8674(82)90135-0"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "G186R",
+    "reference_accession": "NC_002017.1",
+    "effect": "Antigenic escape mutation",
+    "doi": "10.1016/0092-8674(82)90135-0",
+    "notes": "A/PR/8/34",
+    "metadata": {
+      "authors": "Andrew J. Caton, George G. Brownlee, Jonathan W. Yewdell, Walter Gerhard",
+      "year": "1982",
+      "title": "The antigenic structure of the influenza virus A/PR/8/34 hemagglutinin (H1 subtype)",
+      "journal": "Cell",
+      "doi_url": "https://doi.org/10.1016/0092-8674(82)90135-0"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "S173L",
+    "reference_accession": "NC_002017.1",
+    "effect": "Antigenic escape mutation",
+    "doi": "10.1016/0092-8674(82)90135-0",
+    "notes": "A/PR/8/34",
+    "metadata": {
+      "authors": "Andrew J. Caton, George G. Brownlee, Jonathan W. Yewdell, Walter Gerhard",
+      "year": "1982",
+      "title": "The antigenic structure of the influenza virus A/PR/8/34 hemagglutinin (H1 subtype)",
+      "journal": "Cell",
+      "doi_url": "https://doi.org/10.1016/0092-8674(82)90135-0"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "K176T",
+    "reference_accession": "NC_002017.1",
+    "effect": "Antigenic escape mutation",
+    "doi": "10.1016/0092-8674(82)90135-0",
+    "notes": "A/PR/8/34",
+    "metadata": {
+      "authors": "Andrew J. Caton, George G. Brownlee, Jonathan W. Yewdell, Walter Gerhard",
+      "year": "1982",
+      "title": "The antigenic structure of the influenza virus A/PR/8/34 hemagglutinin (H1 subtype)",
+      "journal": "Cell",
+      "doi_url": "https://doi.org/10.1016/0092-8674(82)90135-0"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "K178E",
+    "reference_accession": "NC_002017.1",
+    "effect": "Antigenic escape mutation",
+    "doi": "10.1016/0092-8674(82)90135-0",
+    "notes": "A/PR/8/34",
+    "metadata": {
+      "authors": "Andrew J. Caton, George G. Brownlee, Jonathan W. Yewdell, Walter Gerhard",
+      "year": "1982",
+      "title": "The antigenic structure of the influenza virus A/PR/8/34 hemagglutinin (H1 subtype)",
+      "journal": "Cell",
+      "doi_url": "https://doi.org/10.1016/0092-8674(82)90135-0"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "P175L",
+    "reference_accession": "NC_002017.1",
+    "effect": "Antigenic escape mutation",
+    "doi": "10.1016/0092-8674(82)90135-0",
+    "notes": "A/PR/8/34",
+    "metadata": {
+      "authors": "Andrew J. Caton, George G. Brownlee, Jonathan W. Yewdell, Walter Gerhard",
+      "year": "1982",
+      "title": "The antigenic structure of the influenza virus A/PR/8/34 hemagglutinin (H1 subtype)",
+      "journal": "Cell",
+      "doi_url": "https://doi.org/10.1016/0092-8674(82)90135-0"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "N179K",
+    "reference_accession": "NC_002017.1",
+    "effect": "Antigenic escape mutation",
+    "doi": "10.1016/0092-8674(82)90135-0",
+    "notes": "A/PR/8/34",
+    "metadata": {
+      "authors": "Andrew J. Caton, George G. Brownlee, Jonathan W. Yewdell, Walter Gerhard",
+      "year": "1982",
+      "title": "The antigenic structure of the influenza virus A/PR/8/34 hemagglutinin (H1 subtype)",
+      "journal": "Cell",
+      "doi_url": "https://doi.org/10.1016/0092-8674(82)90135-0"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "S180F",
+    "reference_accession": "NC_002017.1",
+    "effect": "Antigenic escape mutation",
+    "doi": "10.1016/0092-8674(82)90135-0",
+    "notes": "A/PR/8/34",
+    "metadata": {
+      "authors": "Andrew J. Caton, George G. Brownlee, Jonathan W. Yewdell, Walter Gerhard",
+      "year": "1982",
+      "title": "The antigenic structure of the influenza virus A/PR/8/34 hemagglutinin (H1 subtype)",
+      "journal": "Cell",
+      "doi_url": "https://doi.org/10.1016/0092-8674(82)90135-0"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "S180V",
+    "reference_accession": "NC_002017.1",
+    "effect": "Antigenic escape mutation",
+    "doi": "10.1016/0092-8674(82)90135-0",
+    "notes": "A/PR/8/34",
+    "metadata": {
+      "authors": "Andrew J. Caton, George G. Brownlee, Jonathan W. Yewdell, Walter Gerhard",
+      "year": "1982",
+      "title": "The antigenic structure of the influenza virus A/PR/8/34 hemagglutinin (H1 subtype)",
+      "journal": "Cell",
+      "doi_url": "https://doi.org/10.1016/0092-8674(82)90135-0"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "Q205L",
+    "reference_accession": "NC_002017.1",
+    "effect": "Antigenic escape mutation",
+    "doi": "10.1016/0092-8674(82)90135-0",
+    "notes": "A/PR/8/34",
+    "metadata": {
+      "authors": "Andrew J. Caton, George G. Brownlee, Jonathan W. Yewdell, Walter Gerhard",
+      "year": "1982",
+      "title": "The antigenic structure of the influenza virus A/PR/8/34 hemagglutinin (H1 subtype)",
+      "journal": "Cell",
+      "doi_url": "https://doi.org/10.1016/0092-8674(82)90135-0"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "N206S",
+    "reference_accession": "NC_002017.1",
+    "effect": "Antigenic escape mutation",
+    "doi": "10.1016/0092-8674(82)90135-0",
+    "notes": "A/PR/8/34",
+    "metadata": {
+      "authors": "Andrew J. Caton, George G. Brownlee, Jonathan W. Yewdell, Walter Gerhard",
+      "year": "1982",
+      "title": "The antigenic structure of the influenza virus A/PR/8/34 hemagglutinin (H1 subtype)",
+      "journal": "Cell",
+      "doi_url": "https://doi.org/10.1016/0092-8674(82)90135-0"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "N206K",
+    "reference_accession": "NC_002017.1",
+    "effect": "Antigenic escape mutation",
+    "doi": "10.1016/0092-8674(82)90135-0",
+    "notes": "A/PR/8/34",
+    "metadata": {
+      "authors": "Andrew J. Caton, George G. Brownlee, Jonathan W. Yewdell, Walter Gerhard",
+      "year": "1982",
+      "title": "The antigenic structure of the influenza virus A/PR/8/34 hemagglutinin (H1 subtype)",
+      "journal": "Cell",
+      "doi_url": "https://doi.org/10.1016/0092-8674(82)90135-0"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "I195M",
+    "reference_accession": "NC_002017.1",
+    "effect": "Antigenic escape mutation",
+    "doi": "10.1016/0092-8674(82)90135-0",
+    "notes": "A/PR/8/34",
+    "metadata": {
+      "authors": "Andrew J. Caton, George G. Brownlee, Jonathan W. Yewdell, Walter Gerhard",
+      "year": "1982",
+      "title": "The antigenic structure of the influenza virus A/PR/8/34 hemagglutinin (H1 subtype)",
+      "journal": "Cell",
+      "doi_url": "https://doi.org/10.1016/0092-8674(82)90135-0"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "G172D",
+    "reference_accession": "NC_002017.1",
+    "effect": "Antigenic escape mutation",
+    "doi": "10.1016/0092-8674(82)90135-0",
+    "notes": "A/PR/8/34",
+    "metadata": {
+      "authors": "Andrew J. Caton, George G. Brownlee, Jonathan W. Yewdell, Walter Gerhard",
+      "year": "1982",
+      "title": "The antigenic structure of the influenza virus A/PR/8/34 hemagglutinin (H1 subtype)",
+      "journal": "Cell",
+      "doi_url": "https://doi.org/10.1016/0092-8674(82)90135-0"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "Q209R",
+    "reference_accession": "NC_002017.1",
+    "effect": "Antigenic escape mutation",
+    "doi": "10.1016/0092-8674(82)90135-0",
+    "notes": "A/PR/8/34",
+    "metadata": {
+      "authors": "Andrew J. Caton, George G. Brownlee, Jonathan W. Yewdell, Walter Gerhard",
+      "year": "1982",
+      "title": "The antigenic structure of the influenza virus A/PR/8/34 hemagglutinin (H1 subtype)",
+      "journal": "Cell",
+      "doi_url": "https://doi.org/10.1016/0092-8674(82)90135-0"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "S220L",
+    "reference_accession": "NC_002017.1",
+    "effect": "Antigenic escape mutation",
+    "doi": "10.1016/0092-8674(82)90135-0",
+    "notes": "A/PR/8/34",
+    "metadata": {
+      "authors": "Andrew J. Caton, George G. Brownlee, Jonathan W. Yewdell, Walter Gerhard",
+      "year": "1982",
+      "title": "The antigenic structure of the influenza virus A/PR/8/34 hemagglutinin (H1 subtype)",
+      "journal": "Cell",
+      "doi_url": "https://doi.org/10.1016/0092-8674(82)90135-0"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "D238G",
+    "reference_accession": "NC_002017.1",
+    "effect": "Antigenic escape mutation",
+    "doi": "10.1016/0092-8674(82)90135-0",
+    "notes": "A/PR/8/34",
+    "metadata": {
+      "authors": "Andrew J. Caton, George G. Brownlee, Jonathan W. Yewdell, Walter Gerhard",
+      "year": "1982",
+      "title": "The antigenic structure of the influenza virus A/PR/8/34 hemagglutinin (H1 subtype)",
+      "journal": "Cell",
+      "doi_url": "https://doi.org/10.1016/0092-8674(82)90135-0"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "G253E",
+    "reference_accession": "NC_002017.1",
+    "effect": "Antigenic escape mutation",
+    "doi": "10.1016/0092-8674(82)90135-0",
+    "notes": "A/PR/8/34",
+    "metadata": {
+      "authors": "Andrew J. Caton, George G. Brownlee, Jonathan W. Yewdell, Walter Gerhard",
+      "year": "1982",
+      "title": "The antigenic structure of the influenza virus A/PR/8/34 hemagglutinin (H1 subtype)",
+      "journal": "Cell",
+      "doi_url": "https://doi.org/10.1016/0092-8674(82)90135-0"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "G253R",
+    "reference_accession": "NC_002017.1",
+    "effect": "Antigenic escape mutation",
+    "doi": "10.1016/0092-8674(82)90135-0",
+    "notes": "A/PR/8/34",
+    "metadata": {
+      "authors": "Andrew J. Caton, George G. Brownlee, Jonathan W. Yewdell, Walter Gerhard",
+      "year": "1982",
+      "title": "The antigenic structure of the influenza virus A/PR/8/34 hemagglutinin (H1 subtype)",
+      "journal": "Cell",
+      "doi_url": "https://doi.org/10.1016/0092-8674(82)90135-0"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "S287T",
+    "reference_accession": "NC_002017.1",
+    "effect": "Antigenic escape mutation",
+    "doi": "10.1016/0092-8674(82)90135-0",
+    "notes": "A/PR/8/34",
+    "metadata": {
+      "authors": "Andrew J. Caton, George G. Brownlee, Jonathan W. Yewdell, Walter Gerhard",
+      "year": "1982",
+      "title": "The antigenic structure of the influenza virus A/PR/8/34 hemagglutinin (H1 subtype)",
+      "journal": "Cell",
+      "doi_url": "https://doi.org/10.1016/0092-8674(82)90135-0"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "E203D",
+    "reference_accession": "NC_002017.1",
+    "effect": "Antigenic escape mutation",
+    "doi": "10.1016/0092-8674(82)90135-0",
+    "notes": "A/PR/8/34",
+    "metadata": {
+      "authors": "Andrew J. Caton, George G. Brownlee, Jonathan W. Yewdell, Walter Gerhard",
+      "year": "1982",
+      "title": "The antigenic structure of the influenza virus A/PR/8/34 hemagglutinin (H1 subtype)",
+      "journal": "Cell",
+      "doi_url": "https://doi.org/10.1016/0092-8674(82)90135-0"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "H25A",
+    "reference_accession": "NC_002017.1",
+    "effect": "Antigenic escape mutation",
+    "doi": "10.1016/0092-8674(82)90135-0",
+    "notes": "A/PR/8/34",
+    "metadata": {
+      "authors": "Andrew J. Caton, George G. Brownlee, Jonathan W. Yewdell, Walter Gerhard",
+      "year": "1982",
+      "title": "The antigenic structure of the influenza virus A/PR/8/34 hemagglutinin (H1 subtype)",
+      "journal": "Cell",
+      "doi_url": "https://doi.org/10.1016/0092-8674(82)90135-0"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "N336A",
+    "reference_accession": "NC_002017.1",
+    "effect": "Antigenic escape mutation",
+    "doi": "10.1016/0092-8674(82)90135-0",
+    "notes": "A/PR/8/34",
+    "metadata": {
+      "authors": "Andrew J. Caton, George G. Brownlee, Jonathan W. Yewdell, Walter Gerhard",
+      "year": "1982",
+      "title": "The antigenic structure of the influenza virus A/PR/8/34 hemagglutinin (H1 subtype)",
+      "journal": "Cell",
+      "doi_url": "https://doi.org/10.1016/0092-8674(82)90135-0"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "P338A",
+    "reference_accession": "NC_002017.1",
+    "effect": "Antigenic escape mutation",
+    "doi": "10.1016/0092-8674(82)90135-0",
+    "notes": "A/PR/8/34",
+    "metadata": {
+      "authors": "Andrew J. Caton, George G. Brownlee, Jonathan W. Yewdell, Walter Gerhard",
+      "year": "1982",
+      "title": "The antigenic structure of the influenza virus A/PR/8/34 hemagglutinin (H1 subtype)",
+      "journal": "Cell",
+      "doi_url": "https://doi.org/10.1016/0092-8674(82)90135-0"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "P141L",
+    "reference_accession": "ACR09395",
+    "effect": "Antigenic escape mutation",
+    "doi": "https://doi.org/10.1128/jvi.01381-14",
+    "notes": "A/Narita/1/2009",
+    "metadata": {
+      "authors": "Yoko Matsuzaki, Kanetsu Sugawara, Mina Nakauchi, Yoshimasa Takahashi, Taishi Onodera, Yasuko Tsunetsugu-Yokota, Takayuki Matsumura, Manabu Ato, Kazuo Kobayashi, Yoshitaka Shimotai, Katsumi Mizuta, Seiji Hongo, Masato Tashiro, Eri Nobusawa",
+      "year": "2014",
+      "title": "Epitope Mapping of the Hemagglutinin Molecule of A/(H1N1)pdm09 Influenza Virus by Using Monoclonal Antibody Escape Mutants",
+      "journal": "Journal of Virology",
+      "doi_url": "https://doi.org/https://doi.org/10.1128/jvi.01381-14"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "P141T",
+    "reference_accession": "ACR09395",
+    "effect": "Antigenic escape mutation",
+    "doi": "https://doi.org/10.1128/jvi.01381-14",
+    "notes": "A/Narita/1/2009",
+    "metadata": {
+      "authors": "Yoko Matsuzaki, Kanetsu Sugawara, Mina Nakauchi, Yoshimasa Takahashi, Taishi Onodera, Yasuko Tsunetsugu-Yokota, Takayuki Matsumura, Manabu Ato, Kazuo Kobayashi, Yoshitaka Shimotai, Katsumi Mizuta, Seiji Hongo, Masato Tashiro, Eri Nobusawa",
+      "year": "2014",
+      "title": "Epitope Mapping of the Hemagglutinin Molecule of A/(H1N1)pdm09 Influenza Virus by Using Monoclonal Antibody Escape Mutants",
+      "journal": "Journal of Virology",
+      "doi_url": "https://doi.org/https://doi.org/10.1128/jvi.01381-14"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "N142D",
+    "reference_accession": "ACR09395",
+    "effect": "Antigenic escape mutation",
+    "doi": "https://doi.org/10.1128/jvi.01381-14",
+    "notes": "A/Narita/1/2009",
+    "metadata": {
+      "authors": "Yoko Matsuzaki, Kanetsu Sugawara, Mina Nakauchi, Yoshimasa Takahashi, Taishi Onodera, Yasuko Tsunetsugu-Yokota, Takayuki Matsumura, Manabu Ato, Kazuo Kobayashi, Yoshitaka Shimotai, Katsumi Mizuta, Seiji Hongo, Masato Tashiro, Eri Nobusawa",
+      "year": "2014",
+      "title": "Epitope Mapping of the Hemagglutinin Molecule of A/(H1N1)pdm09 Influenza Virus by Using Monoclonal Antibody Escape Mutants",
+      "journal": "Journal of Virology",
+      "doi_url": "https://doi.org/https://doi.org/10.1128/jvi.01381-14"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "H143Y",
+    "reference_accession": "ACR09395",
+    "effect": "Antigenic escape mutation",
+    "doi": "https://doi.org/10.1128/jvi.01381-14",
+    "notes": "A/Narita/1/2009",
+    "metadata": {
+      "authors": "Yoko Matsuzaki, Kanetsu Sugawara, Mina Nakauchi, Yoshimasa Takahashi, Taishi Onodera, Yasuko Tsunetsugu-Yokota, Takayuki Matsumura, Manabu Ato, Kazuo Kobayashi, Yoshitaka Shimotai, Katsumi Mizuta, Seiji Hongo, Masato Tashiro, Eri Nobusawa",
+      "year": "2014",
+      "title": "Epitope Mapping of the Hemagglutinin Molecule of A/(H1N1)pdm09 Influenza Virus by Using Monoclonal Antibody Escape Mutants",
+      "journal": "Journal of Virology",
+      "doi_url": "https://doi.org/https://doi.org/10.1128/jvi.01381-14"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "A151G",
+    "reference_accession": "ACR09395",
+    "effect": "Antigenic escape mutation",
+    "doi": "https://doi.org/10.1128/jvi.01381-14",
+    "notes": "A/Narita/1/2009",
+    "metadata": {
+      "authors": "Yoko Matsuzaki, Kanetsu Sugawara, Mina Nakauchi, Yoshimasa Takahashi, Taishi Onodera, Yasuko Tsunetsugu-Yokota, Takayuki Matsumura, Manabu Ato, Kazuo Kobayashi, Yoshitaka Shimotai, Katsumi Mizuta, Seiji Hongo, Masato Tashiro, Eri Nobusawa",
+      "year": "2014",
+      "title": "Epitope Mapping of the Hemagglutinin Molecule of A/(H1N1)pdm09 Influenza Virus by Using Monoclonal Antibody Escape Mutants",
+      "journal": "Journal of Virology",
+      "doi_url": "https://doi.org/https://doi.org/10.1128/jvi.01381-14"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "A151V",
+    "reference_accession": "ACR09395",
+    "effect": "Antigenic escape mutation",
+    "doi": "https://doi.org/10.1128/jvi.01381-14",
+    "notes": "A/Narita/1/2009",
+    "metadata": {
+      "authors": "Yoko Matsuzaki, Kanetsu Sugawara, Mina Nakauchi, Yoshimasa Takahashi, Taishi Onodera, Yasuko Tsunetsugu-Yokota, Takayuki Matsumura, Manabu Ato, Kazuo Kobayashi, Yoshitaka Shimotai, Katsumi Mizuta, Seiji Hongo, Masato Tashiro, Eri Nobusawa",
+      "year": "2014",
+      "title": "Epitope Mapping of the Hemagglutinin Molecule of A/(H1N1)pdm09 Influenza Virus by Using Monoclonal Antibody Escape Mutants",
+      "journal": "Journal of Virology",
+      "doi_url": "https://doi.org/https://doi.org/10.1128/jvi.01381-14"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "P154S",
+    "reference_accession": "ACR09395",
+    "effect": "Antigenic escape mutation",
+    "doi": "https://doi.org/10.1128/jvi.01381-14",
+    "notes": "A/Narita/1/2009",
+    "metadata": {
+      "authors": "Yoko Matsuzaki, Kanetsu Sugawara, Mina Nakauchi, Yoshimasa Takahashi, Taishi Onodera, Yasuko Tsunetsugu-Yokota, Takayuki Matsumura, Manabu Ato, Kazuo Kobayashi, Yoshitaka Shimotai, Katsumi Mizuta, Seiji Hongo, Masato Tashiro, Eri Nobusawa",
+      "year": "2014",
+      "title": "Epitope Mapping of the Hemagglutinin Molecule of A/(H1N1)pdm09 Influenza Virus by Using Monoclonal Antibody Escape Mutants",
+      "journal": "Journal of Virology",
+      "doi_url": "https://doi.org/https://doi.org/10.1128/jvi.01381-14"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "P154T",
+    "reference_accession": "ACR09395",
+    "effect": "Antigenic escape mutation",
+    "doi": "https://doi.org/10.1128/jvi.01381-14",
+    "notes": "A/Narita/1/2009",
+    "metadata": {
+      "authors": "Yoko Matsuzaki, Kanetsu Sugawara, Mina Nakauchi, Yoshimasa Takahashi, Taishi Onodera, Yasuko Tsunetsugu-Yokota, Takayuki Matsumura, Manabu Ato, Kazuo Kobayashi, Yoshitaka Shimotai, Katsumi Mizuta, Seiji Hongo, Masato Tashiro, Eri Nobusawa",
+      "year": "2014",
+      "title": "Epitope Mapping of the Hemagglutinin Molecule of A/(H1N1)pdm09 Influenza Virus by Using Monoclonal Antibody Escape Mutants",
+      "journal": "Journal of Virology",
+      "doi_url": "https://doi.org/https://doi.org/10.1128/jvi.01381-14"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "A156D",
+    "reference_accession": "ACR09395",
+    "effect": "Antigenic escape mutation",
+    "doi": "https://doi.org/10.1128/jvi.01381-14",
+    "notes": "A/Narita/1/2009",
+    "metadata": {
+      "authors": "Yoko Matsuzaki, Kanetsu Sugawara, Mina Nakauchi, Yoshimasa Takahashi, Taishi Onodera, Yasuko Tsunetsugu-Yokota, Takayuki Matsumura, Manabu Ato, Kazuo Kobayashi, Yoshitaka Shimotai, Katsumi Mizuta, Seiji Hongo, Masato Tashiro, Eri Nobusawa",
+      "year": "2014",
+      "title": "Epitope Mapping of the Hemagglutinin Molecule of A/(H1N1)pdm09 Influenza Virus by Using Monoclonal Antibody Escape Mutants",
+      "journal": "Journal of Virology",
+      "doi_url": "https://doi.org/https://doi.org/10.1128/jvi.01381-14"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "A156T",
+    "reference_accession": "ACR09395",
+    "effect": "Antigenic escape mutation",
+    "doi": "https://doi.org/10.1128/jvi.01381-14",
+    "notes": "A/Narita/1/2009",
+    "metadata": {
+      "authors": "Yoko Matsuzaki, Kanetsu Sugawara, Mina Nakauchi, Yoshimasa Takahashi, Taishi Onodera, Yasuko Tsunetsugu-Yokota, Takayuki Matsumura, Manabu Ato, Kazuo Kobayashi, Yoshitaka Shimotai, Katsumi Mizuta, Seiji Hongo, Masato Tashiro, Eri Nobusawa",
+      "year": "2014",
+      "title": "Epitope Mapping of the Hemagglutinin Molecule of A/(H1N1)pdm09 Influenza Virus by Using Monoclonal Antibody Escape Mutants",
+      "journal": "Journal of Virology",
+      "doi_url": "https://doi.org/https://doi.org/10.1128/jvi.01381-14"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "A156V",
+    "reference_accession": "ACR09395",
+    "effect": "Antigenic escape mutation",
+    "doi": "https://doi.org/10.1128/jvi.01381-14",
+    "notes": "A/Narita/1/2009",
+    "metadata": {
+      "authors": "Yoko Matsuzaki, Kanetsu Sugawara, Mina Nakauchi, Yoshimasa Takahashi, Taishi Onodera, Yasuko Tsunetsugu-Yokota, Takayuki Matsumura, Manabu Ato, Kazuo Kobayashi, Yoshitaka Shimotai, Katsumi Mizuta, Seiji Hongo, Masato Tashiro, Eri Nobusawa",
+      "year": "2014",
+      "title": "Epitope Mapping of the Hemagglutinin Molecule of A/(H1N1)pdm09 Influenza Virus by Using Monoclonal Antibody Escape Mutants",
+      "journal": "Journal of Virology",
+      "doi_url": "https://doi.org/https://doi.org/10.1128/jvi.01381-14"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "G157E",
+    "reference_accession": "ACR09395",
+    "effect": "Antigenic escape mutation",
+    "doi": "https://doi.org/10.1128/jvi.01381-14",
+    "notes": "A/Narita/1/2009",
+    "metadata": {
+      "authors": "Yoko Matsuzaki, Kanetsu Sugawara, Mina Nakauchi, Yoshimasa Takahashi, Taishi Onodera, Yasuko Tsunetsugu-Yokota, Takayuki Matsumura, Manabu Ato, Kazuo Kobayashi, Yoshitaka Shimotai, Katsumi Mizuta, Seiji Hongo, Masato Tashiro, Eri Nobusawa",
+      "year": "2014",
+      "title": "Epitope Mapping of the Hemagglutinin Molecule of A/(H1N1)pdm09 Influenza Virus by Using Monoclonal Antibody Escape Mutants",
+      "journal": "Journal of Virology",
+      "doi_url": "https://doi.org/https://doi.org/10.1128/jvi.01381-14"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "G157R",
+    "reference_accession": "ACR09395",
+    "effect": "Antigenic escape mutation",
+    "doi": "https://doi.org/10.1128/jvi.01381-14",
+    "notes": "A/Narita/1/2009",
+    "metadata": {
+      "authors": "Yoko Matsuzaki, Kanetsu Sugawara, Mina Nakauchi, Yoshimasa Takahashi, Taishi Onodera, Yasuko Tsunetsugu-Yokota, Takayuki Matsumura, Manabu Ato, Kazuo Kobayashi, Yoshitaka Shimotai, Katsumi Mizuta, Seiji Hongo, Masato Tashiro, Eri Nobusawa",
+      "year": "2014",
+      "title": "Epitope Mapping of the Hemagglutinin Molecule of A/(H1N1)pdm09 Influenza Virus by Using Monoclonal Antibody Escape Mutants",
+      "journal": "Journal of Virology",
+      "doi_url": "https://doi.org/https://doi.org/10.1128/jvi.01381-14"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "A158E",
+    "reference_accession": "ACR09395",
+    "effect": "Antigenic escape mutation",
+    "doi": "https://doi.org/10.1128/jvi.01381-14",
+    "notes": "A/Narita/1/2009",
+    "metadata": {
+      "authors": "Yoko Matsuzaki, Kanetsu Sugawara, Mina Nakauchi, Yoshimasa Takahashi, Taishi Onodera, Yasuko Tsunetsugu-Yokota, Takayuki Matsumura, Manabu Ato, Kazuo Kobayashi, Yoshitaka Shimotai, Katsumi Mizuta, Seiji Hongo, Masato Tashiro, Eri Nobusawa",
+      "year": "2014",
+      "title": "Epitope Mapping of the Hemagglutinin Molecule of A/(H1N1)pdm09 Influenza Virus by Using Monoclonal Antibody Escape Mutants",
+      "journal": "Journal of Virology",
+      "doi_url": "https://doi.org/https://doi.org/10.1128/jvi.01381-14"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "A158V",
+    "reference_accession": "ACR09395",
+    "effect": "Antigenic escape mutation",
+    "doi": "https://doi.org/10.1128/jvi.01381-14",
+    "notes": "A/Narita/1/2009",
+    "metadata": {
+      "authors": "Yoko Matsuzaki, Kanetsu Sugawara, Mina Nakauchi, Yoshimasa Takahashi, Taishi Onodera, Yasuko Tsunetsugu-Yokota, Takayuki Matsumura, Manabu Ato, Kazuo Kobayashi, Yoshitaka Shimotai, Katsumi Mizuta, Seiji Hongo, Masato Tashiro, Eri Nobusawa",
+      "year": "2014",
+      "title": "Epitope Mapping of the Hemagglutinin Molecule of A/(H1N1)pdm09 Influenza Virus by Using Monoclonal Antibody Escape Mutants",
+      "journal": "Journal of Virology",
+      "doi_url": "https://doi.org/https://doi.org/10.1128/jvi.01381-14"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "K159N",
+    "reference_accession": "ACR09395",
+    "effect": "Antigenic escape mutation",
+    "doi": "https://doi.org/10.1128/jvi.01381-14",
+    "notes": "A/Narita/1/2009",
+    "metadata": {
+      "authors": "Yoko Matsuzaki, Kanetsu Sugawara, Mina Nakauchi, Yoshimasa Takahashi, Taishi Onodera, Yasuko Tsunetsugu-Yokota, Takayuki Matsumura, Manabu Ato, Kazuo Kobayashi, Yoshitaka Shimotai, Katsumi Mizuta, Seiji Hongo, Masato Tashiro, Eri Nobusawa",
+      "year": "2014",
+      "title": "Epitope Mapping of the Hemagglutinin Molecule of A/(H1N1)pdm09 Influenza Virus by Using Monoclonal Antibody Escape Mutants",
+      "journal": "Journal of Virology",
+      "doi_url": "https://doi.org/https://doi.org/10.1128/jvi.01381-14"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "K170E",
+    "reference_accession": "ACR09395",
+    "effect": "Antigenic escape mutation",
+    "doi": "https://doi.org/10.1128/jvi.01381-14",
+    "notes": "A/Narita/1/2009",
+    "metadata": {
+      "authors": "Yoko Matsuzaki, Kanetsu Sugawara, Mina Nakauchi, Yoshimasa Takahashi, Taishi Onodera, Yasuko Tsunetsugu-Yokota, Takayuki Matsumura, Manabu Ato, Kazuo Kobayashi, Yoshitaka Shimotai, Katsumi Mizuta, Seiji Hongo, Masato Tashiro, Eri Nobusawa",
+      "year": "2014",
+      "title": "Epitope Mapping of the Hemagglutinin Molecule of A/(H1N1)pdm09 Influenza Virus by Using Monoclonal Antibody Escape Mutants",
+      "journal": "Journal of Virology",
+      "doi_url": "https://doi.org/https://doi.org/10.1128/jvi.01381-14"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "K170Q",
+    "reference_accession": "ACR09395",
+    "effect": "Antigenic escape mutation",
+    "doi": "https://doi.org/10.1128/jvi.01381-14",
+    "notes": "A/Narita/1/2009",
+    "metadata": {
+      "authors": "Yoko Matsuzaki, Kanetsu Sugawara, Mina Nakauchi, Yoshimasa Takahashi, Taishi Onodera, Yasuko Tsunetsugu-Yokota, Takayuki Matsumura, Manabu Ato, Kazuo Kobayashi, Yoshitaka Shimotai, Katsumi Mizuta, Seiji Hongo, Masato Tashiro, Eri Nobusawa",
+      "year": "2014",
+      "title": "Epitope Mapping of the Hemagglutinin Molecule of A/(H1N1)pdm09 Influenza Virus by Using Monoclonal Antibody Escape Mutants",
+      "journal": "Journal of Virology",
+      "doi_url": "https://doi.org/https://doi.org/10.1128/jvi.01381-14"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "K170T",
+    "reference_accession": "ACR09395",
+    "effect": "Antigenic escape mutation",
+    "doi": "https://doi.org/10.1128/jvi.01381-14",
+    "notes": "A/Narita/1/2009",
+    "metadata": {
+      "authors": "Yoko Matsuzaki, Kanetsu Sugawara, Mina Nakauchi, Yoshimasa Takahashi, Taishi Onodera, Yasuko Tsunetsugu-Yokota, Takayuki Matsumura, Manabu Ato, Kazuo Kobayashi, Yoshitaka Shimotai, Katsumi Mizuta, Seiji Hongo, Masato Tashiro, Eri Nobusawa",
+      "year": "2014",
+      "title": "Epitope Mapping of the Hemagglutinin Molecule of A/(H1N1)pdm09 Influenza Virus by Using Monoclonal Antibody Escape Mutants",
+      "journal": "Journal of Virology",
+      "doi_url": "https://doi.org/https://doi.org/10.1128/jvi.01381-14"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "K171E",
+    "reference_accession": "ACR09395",
+    "effect": "Antigenic escape mutation",
+    "doi": "https://doi.org/10.1128/jvi.01381-14",
+    "notes": "A/Narita/1/2009",
+    "metadata": {
+      "authors": "Yoko Matsuzaki, Kanetsu Sugawara, Mina Nakauchi, Yoshimasa Takahashi, Taishi Onodera, Yasuko Tsunetsugu-Yokota, Takayuki Matsumura, Manabu Ato, Kazuo Kobayashi, Yoshitaka Shimotai, Katsumi Mizuta, Seiji Hongo, Masato Tashiro, Eri Nobusawa",
+      "year": "2014",
+      "title": "Epitope Mapping of the Hemagglutinin Molecule of A/(H1N1)pdm09 Influenza Virus by Using Monoclonal Antibody Escape Mutants",
+      "journal": "Journal of Virology",
+      "doi_url": "https://doi.org/https://doi.org/10.1128/jvi.01381-14"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "K171N",
+    "reference_accession": "ACR09395",
+    "effect": "Antigenic escape mutation",
+    "doi": "https://doi.org/10.1128/jvi.01381-14",
+    "notes": "A/Narita/1/2009",
+    "metadata": {
+      "authors": "Yoko Matsuzaki, Kanetsu Sugawara, Mina Nakauchi, Yoshimasa Takahashi, Taishi Onodera, Yasuko Tsunetsugu-Yokota, Takayuki Matsumura, Manabu Ato, Kazuo Kobayashi, Yoshitaka Shimotai, Katsumi Mizuta, Seiji Hongo, Masato Tashiro, Eri Nobusawa",
+      "year": "2014",
+      "title": "Epitope Mapping of the Hemagglutinin Molecule of A/(H1N1)pdm09 Influenza Virus by Using Monoclonal Antibody Escape Mutants",
+      "journal": "Journal of Virology",
+      "doi_url": "https://doi.org/https://doi.org/10.1128/jvi.01381-14"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "K171Q",
+    "reference_accession": "ACR09395",
+    "effect": "Antigenic escape mutation",
+    "doi": "https://doi.org/10.1128/jvi.01381-14",
+    "notes": "A/Narita/1/2009",
+    "metadata": {
+      "authors": "Yoko Matsuzaki, Kanetsu Sugawara, Mina Nakauchi, Yoshimasa Takahashi, Taishi Onodera, Yasuko Tsunetsugu-Yokota, Takayuki Matsumura, Manabu Ato, Kazuo Kobayashi, Yoshitaka Shimotai, Katsumi Mizuta, Seiji Hongo, Masato Tashiro, Eri Nobusawa",
+      "year": "2014",
+      "title": "Epitope Mapping of the Hemagglutinin Molecule of A/(H1N1)pdm09 Influenza Virus by Using Monoclonal Antibody Escape Mutants",
+      "journal": "Journal of Virology",
+      "doi_url": "https://doi.org/https://doi.org/10.1128/jvi.01381-14"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "K171T",
+    "reference_accession": "ACR09395",
+    "effect": "Antigenic escape mutation",
+    "doi": "https://doi.org/10.1128/jvi.01381-14",
+    "notes": "A/Narita/1/2009",
+    "metadata": {
+      "authors": "Yoko Matsuzaki, Kanetsu Sugawara, Mina Nakauchi, Yoshimasa Takahashi, Taishi Onodera, Yasuko Tsunetsugu-Yokota, Takayuki Matsumura, Manabu Ato, Kazuo Kobayashi, Yoshitaka Shimotai, Katsumi Mizuta, Seiji Hongo, Masato Tashiro, Eri Nobusawa",
+      "year": "2014",
+      "title": "Epitope Mapping of the Hemagglutinin Molecule of A/(H1N1)pdm09 Influenza Virus by Using Monoclonal Antibody Escape Mutants",
+      "journal": "Journal of Virology",
+      "doi_url": "https://doi.org/https://doi.org/10.1128/jvi.01381-14"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "G172E",
+    "reference_accession": "ACR09395",
+    "effect": "Antigenic escape mutation",
+    "doi": "https://doi.org/10.1128/jvi.01381-14",
+    "notes": "A/Narita/1/2009",
+    "metadata": {
+      "authors": "Yoko Matsuzaki, Kanetsu Sugawara, Mina Nakauchi, Yoshimasa Takahashi, Taishi Onodera, Yasuko Tsunetsugu-Yokota, Takayuki Matsumura, Manabu Ato, Kazuo Kobayashi, Yoshitaka Shimotai, Katsumi Mizuta, Seiji Hongo, Masato Tashiro, Eri Nobusawa",
+      "year": "2014",
+      "title": "Epitope Mapping of the Hemagglutinin Molecule of A/(H1N1)pdm09 Influenza Virus by Using Monoclonal Antibody Escape Mutants",
+      "journal": "Journal of Virology",
+      "doi_url": "https://doi.org/https://doi.org/10.1128/jvi.01381-14"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "G172V",
+    "reference_accession": "ACR09395",
+    "effect": "Antigenic escape mutation",
+    "doi": "https://doi.org/10.1128/jvi.01381-14",
+    "notes": "A/Narita/1/2009",
+    "metadata": {
+      "authors": "Yoko Matsuzaki, Kanetsu Sugawara, Mina Nakauchi, Yoshimasa Takahashi, Taishi Onodera, Yasuko Tsunetsugu-Yokota, Takayuki Matsumura, Manabu Ato, Kazuo Kobayashi, Yoshitaka Shimotai, Katsumi Mizuta, Seiji Hongo, Masato Tashiro, Eri Nobusawa",
+      "year": "2014",
+      "title": "Epitope Mapping of the Hemagglutinin Molecule of A/(H1N1)pdm09 Influenza Virus by Using Monoclonal Antibody Escape Mutants",
+      "journal": "Journal of Virology",
+      "doi_url": "https://doi.org/https://doi.org/10.1128/jvi.01381-14"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "N173D",
+    "reference_accession": "ACR09395",
+    "effect": "Antigenic escape mutation",
+    "doi": "https://doi.org/10.1128/jvi.01381-14",
+    "notes": "A/Narita/1/2009",
+    "metadata": {
+      "authors": "Yoko Matsuzaki, Kanetsu Sugawara, Mina Nakauchi, Yoshimasa Takahashi, Taishi Onodera, Yasuko Tsunetsugu-Yokota, Takayuki Matsumura, Manabu Ato, Kazuo Kobayashi, Yoshitaka Shimotai, Katsumi Mizuta, Seiji Hongo, Masato Tashiro, Eri Nobusawa",
+      "year": "2014",
+      "title": "Epitope Mapping of the Hemagglutinin Molecule of A/(H1N1)pdm09 Influenza Virus by Using Monoclonal Antibody Escape Mutants",
+      "journal": "Journal of Virology",
+      "doi_url": "https://doi.org/https://doi.org/10.1128/jvi.01381-14"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "N173I",
+    "reference_accession": "ACR09395",
+    "effect": "Antigenic escape mutation",
+    "doi": "https://doi.org/10.1128/jvi.01381-14",
+    "notes": "A/Narita/1/2009",
+    "metadata": {
+      "authors": "Yoko Matsuzaki, Kanetsu Sugawara, Mina Nakauchi, Yoshimasa Takahashi, Taishi Onodera, Yasuko Tsunetsugu-Yokota, Takayuki Matsumura, Manabu Ato, Kazuo Kobayashi, Yoshitaka Shimotai, Katsumi Mizuta, Seiji Hongo, Masato Tashiro, Eri Nobusawa",
+      "year": "2014",
+      "title": "Epitope Mapping of the Hemagglutinin Molecule of A/(H1N1)pdm09 Influenza Virus by Using Monoclonal Antibody Escape Mutants",
+      "journal": "Journal of Virology",
+      "doi_url": "https://doi.org/https://doi.org/10.1128/jvi.01381-14"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "S174L",
+    "reference_accession": "ACR09395",
+    "effect": "Antigenic escape mutation",
+    "doi": "https://doi.org/10.1128/jvi.01381-14",
+    "notes": "A/Narita/1/2009",
+    "metadata": {
+      "authors": "Yoko Matsuzaki, Kanetsu Sugawara, Mina Nakauchi, Yoshimasa Takahashi, Taishi Onodera, Yasuko Tsunetsugu-Yokota, Takayuki Matsumura, Manabu Ato, Kazuo Kobayashi, Yoshitaka Shimotai, Katsumi Mizuta, Seiji Hongo, Masato Tashiro, Eri Nobusawa",
+      "year": "2014",
+      "title": "Epitope Mapping of the Hemagglutinin Molecule of A/(H1N1)pdm09 Influenza Virus by Using Monoclonal Antibody Escape Mutants",
+      "journal": "Journal of Virology",
+      "doi_url": "https://doi.org/https://doi.org/10.1128/jvi.01381-14"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "K177E",
+    "reference_accession": "ACR09395",
+    "effect": "Antigenic escape mutation",
+    "doi": "https://doi.org/10.1128/jvi.01381-14",
+    "notes": "A/Narita/1/2009",
+    "metadata": {
+      "authors": "Yoko Matsuzaki, Kanetsu Sugawara, Mina Nakauchi, Yoshimasa Takahashi, Taishi Onodera, Yasuko Tsunetsugu-Yokota, Takayuki Matsumura, Manabu Ato, Kazuo Kobayashi, Yoshitaka Shimotai, Katsumi Mizuta, Seiji Hongo, Masato Tashiro, Eri Nobusawa",
+      "year": "2014",
+      "title": "Epitope Mapping of the Hemagglutinin Molecule of A/(H1N1)pdm09 Influenza Virus by Using Monoclonal Antibody Escape Mutants",
+      "journal": "Journal of Virology",
+      "doi_url": "https://doi.org/https://doi.org/10.1128/jvi.01381-14"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "K177N",
+    "reference_accession": "ACR09395",
+    "effect": "Antigenic escape mutation",
+    "doi": "https://doi.org/10.1128/jvi.01381-14",
+    "notes": "A/Narita/1/2009",
+    "metadata": {
+      "authors": "Yoko Matsuzaki, Kanetsu Sugawara, Mina Nakauchi, Yoshimasa Takahashi, Taishi Onodera, Yasuko Tsunetsugu-Yokota, Takayuki Matsumura, Manabu Ato, Kazuo Kobayashi, Yoshitaka Shimotai, Katsumi Mizuta, Seiji Hongo, Masato Tashiro, Eri Nobusawa",
+      "year": "2014",
+      "title": "Epitope Mapping of the Hemagglutinin Molecule of A/(H1N1)pdm09 Influenza Virus by Using Monoclonal Antibody Escape Mutants",
+      "journal": "Journal of Virology",
+      "doi_url": "https://doi.org/https://doi.org/10.1128/jvi.01381-14"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "K177T",
+    "reference_accession": "ACR09395",
+    "effect": "Antigenic escape mutation",
+    "doi": "https://doi.org/10.1128/jvi.01381-14",
+    "notes": "A/Narita/1/2009",
+    "metadata": {
+      "authors": "Yoko Matsuzaki, Kanetsu Sugawara, Mina Nakauchi, Yoshimasa Takahashi, Taishi Onodera, Yasuko Tsunetsugu-Yokota, Takayuki Matsumura, Manabu Ato, Kazuo Kobayashi, Yoshitaka Shimotai, Katsumi Mizuta, Seiji Hongo, Masato Tashiro, Eri Nobusawa",
+      "year": "2014",
+      "title": "Epitope Mapping of the Hemagglutinin Molecule of A/(H1N1)pdm09 Influenza Virus by Using Monoclonal Antibody Escape Mutants",
+      "journal": "Journal of Virology",
+      "doi_url": "https://doi.org/https://doi.org/10.1128/jvi.01381-14"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "K180E",
+    "reference_accession": "ACR09395",
+    "effect": "Antigenic escape mutation",
+    "doi": "https://doi.org/10.1128/jvi.01381-14",
+    "notes": "A/Narita/1/2009",
+    "metadata": {
+      "authors": "Yoko Matsuzaki, Kanetsu Sugawara, Mina Nakauchi, Yoshimasa Takahashi, Taishi Onodera, Yasuko Tsunetsugu-Yokota, Takayuki Matsumura, Manabu Ato, Kazuo Kobayashi, Yoshitaka Shimotai, Katsumi Mizuta, Seiji Hongo, Masato Tashiro, Eri Nobusawa",
+      "year": "2014",
+      "title": "Epitope Mapping of the Hemagglutinin Molecule of A/(H1N1)pdm09 Influenza Virus by Using Monoclonal Antibody Escape Mutants",
+      "journal": "Journal of Virology",
+      "doi_url": "https://doi.org/https://doi.org/10.1128/jvi.01381-14"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "K180N",
+    "reference_accession": "ACR09395",
+    "effect": "Antigenic escape mutation",
+    "doi": "https://doi.org/10.1128/jvi.01381-14",
+    "notes": "A/Narita/1/2009",
+    "metadata": {
+      "authors": "Yoko Matsuzaki, Kanetsu Sugawara, Mina Nakauchi, Yoshimasa Takahashi, Taishi Onodera, Yasuko Tsunetsugu-Yokota, Takayuki Matsumura, Manabu Ato, Kazuo Kobayashi, Yoshitaka Shimotai, Katsumi Mizuta, Seiji Hongo, Masato Tashiro, Eri Nobusawa",
+      "year": "2014",
+      "title": "Epitope Mapping of the Hemagglutinin Molecule of A/(H1N1)pdm09 Influenza Virus by Using Monoclonal Antibody Escape Mutants",
+      "journal": "Journal of Virology",
+      "doi_url": "https://doi.org/https://doi.org/10.1128/jvi.01381-14"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "K188R",
+    "reference_accession": "ACR09395",
+    "effect": "Antigenic escape mutation",
+    "doi": "https://doi.org/10.1128/jvi.01381-14",
+    "notes": "A/Narita/1/2009",
+    "metadata": {
+      "authors": "Yoko Matsuzaki, Kanetsu Sugawara, Mina Nakauchi, Yoshimasa Takahashi, Taishi Onodera, Yasuko Tsunetsugu-Yokota, Takayuki Matsumura, Manabu Ato, Kazuo Kobayashi, Yoshitaka Shimotai, Katsumi Mizuta, Seiji Hongo, Masato Tashiro, Eri Nobusawa",
+      "year": "2014",
+      "title": "Epitope Mapping of the Hemagglutinin Molecule of A/(H1N1)pdm09 Influenza Virus by Using Monoclonal Antibody Escape Mutants",
+      "journal": "Journal of Virology",
+      "doi_url": "https://doi.org/https://doi.org/10.1128/jvi.01381-14"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "S200P",
+    "reference_accession": "ACR09395",
+    "effect": "Antigenic escape mutation",
+    "doi": "https://doi.org/10.1128/jvi.01381-14",
+    "notes": "A/Narita/1/2009",
+    "metadata": {
+      "authors": "Yoko Matsuzaki, Kanetsu Sugawara, Mina Nakauchi, Yoshimasa Takahashi, Taishi Onodera, Yasuko Tsunetsugu-Yokota, Takayuki Matsumura, Manabu Ato, Kazuo Kobayashi, Yoshitaka Shimotai, Katsumi Mizuta, Seiji Hongo, Masato Tashiro, Eri Nobusawa",
+      "year": "2014",
+      "title": "Epitope Mapping of the Hemagglutinin Molecule of A/(H1N1)pdm09 Influenza Virus by Using Monoclonal Antibody Escape Mutants",
+      "journal": "Journal of Virology",
+      "doi_url": "https://doi.org/https://doi.org/10.1128/jvi.01381-14"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "S202N",
+    "reference_accession": "ACR09395",
+    "effect": "Antigenic escape mutation",
+    "doi": "https://doi.org/10.1128/jvi.01381-14",
+    "notes": "A/Narita/1/2009",
+    "metadata": {
+      "authors": "Yoko Matsuzaki, Kanetsu Sugawara, Mina Nakauchi, Yoshimasa Takahashi, Taishi Onodera, Yasuko Tsunetsugu-Yokota, Takayuki Matsumura, Manabu Ato, Kazuo Kobayashi, Yoshitaka Shimotai, Katsumi Mizuta, Seiji Hongo, Masato Tashiro, Eri Nobusawa",
+      "year": "2014",
+      "title": "Epitope Mapping of the Hemagglutinin Molecule of A/(H1N1)pdm09 Influenza Virus by Using Monoclonal Antibody Escape Mutants",
+      "journal": "Journal of Virology",
+      "doi_url": "https://doi.org/https://doi.org/10.1128/jvi.01381-14"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "Q206E",
+    "reference_accession": "ACR09395",
+    "effect": "Antigenic escape mutation",
+    "doi": "https://doi.org/10.1128/jvi.01381-14",
+    "notes": "A/Narita/1/2009",
+    "metadata": {
+      "authors": "Yoko Matsuzaki, Kanetsu Sugawara, Mina Nakauchi, Yoshimasa Takahashi, Taishi Onodera, Yasuko Tsunetsugu-Yokota, Takayuki Matsumura, Manabu Ato, Kazuo Kobayashi, Yoshitaka Shimotai, Katsumi Mizuta, Seiji Hongo, Masato Tashiro, Eri Nobusawa",
+      "year": "2014",
+      "title": "Epitope Mapping of the Hemagglutinin Molecule of A/(H1N1)pdm09 Influenza Virus by Using Monoclonal Antibody Escape Mutants",
+      "journal": "Journal of Virology",
+      "doi_url": "https://doi.org/https://doi.org/10.1128/jvi.01381-14"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "Q210E",
+    "reference_accession": "ACR09395",
+    "effect": "Antigenic escape mutation",
+    "doi": "https://doi.org/10.1128/jvi.01381-14",
+    "notes": "A/Narita/1/2009",
+    "metadata": {
+      "authors": "Yoko Matsuzaki, Kanetsu Sugawara, Mina Nakauchi, Yoshimasa Takahashi, Taishi Onodera, Yasuko Tsunetsugu-Yokota, Takayuki Matsumura, Manabu Ato, Kazuo Kobayashi, Yoshitaka Shimotai, Katsumi Mizuta, Seiji Hongo, Masato Tashiro, Eri Nobusawa",
+      "year": "2014",
+      "title": "Epitope Mapping of the Hemagglutinin Molecule of A/(H1N1)pdm09 Influenza Virus by Using Monoclonal Antibody Escape Mutants",
+      "journal": "Journal of Virology",
+      "doi_url": "https://doi.org/https://doi.org/10.1128/jvi.01381-14"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "Q210L",
+    "reference_accession": "ACR09395",
+    "effect": "Antigenic escape mutation",
+    "doi": "https://doi.org/10.1128/jvi.01381-14",
+    "notes": "A/Narita/1/2009",
+    "metadata": {
+      "authors": "Yoko Matsuzaki, Kanetsu Sugawara, Mina Nakauchi, Yoshimasa Takahashi, Taishi Onodera, Yasuko Tsunetsugu-Yokota, Takayuki Matsumura, Manabu Ato, Kazuo Kobayashi, Yoshitaka Shimotai, Katsumi Mizuta, Seiji Hongo, Masato Tashiro, Eri Nobusawa",
+      "year": "2014",
+      "title": "Epitope Mapping of the Hemagglutinin Molecule of A/(H1N1)pdm09 Influenza Virus by Using Monoclonal Antibody Escape Mutants",
+      "journal": "Journal of Virology",
+      "doi_url": "https://doi.org/https://doi.org/10.1128/jvi.01381-14"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "N211D",
+    "reference_accession": "ACR09395",
+    "effect": "Antigenic escape mutation",
+    "doi": "https://doi.org/10.1128/jvi.01381-14",
+    "notes": "A/Narita/1/2009",
+    "metadata": {
+      "authors": "Yoko Matsuzaki, Kanetsu Sugawara, Mina Nakauchi, Yoshimasa Takahashi, Taishi Onodera, Yasuko Tsunetsugu-Yokota, Takayuki Matsumura, Manabu Ato, Kazuo Kobayashi, Yoshitaka Shimotai, Katsumi Mizuta, Seiji Hongo, Masato Tashiro, Eri Nobusawa",
+      "year": "2014",
+      "title": "Epitope Mapping of the Hemagglutinin Molecule of A/(H1N1)pdm09 Influenza Virus by Using Monoclonal Antibody Escape Mutants",
+      "journal": "Journal of Virology",
+      "doi_url": "https://doi.org/https://doi.org/10.1128/jvi.01381-14"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "A212E",
+    "reference_accession": "ACR09395",
+    "effect": "Antigenic escape mutation",
+    "doi": "https://doi.org/10.1128/jvi.01381-14",
+    "notes": "A/Narita/1/2009",
+    "metadata": {
+      "authors": "Yoko Matsuzaki, Kanetsu Sugawara, Mina Nakauchi, Yoshimasa Takahashi, Taishi Onodera, Yasuko Tsunetsugu-Yokota, Takayuki Matsumura, Manabu Ato, Kazuo Kobayashi, Yoshitaka Shimotai, Katsumi Mizuta, Seiji Hongo, Masato Tashiro, Eri Nobusawa",
+      "year": "2014",
+      "title": "Epitope Mapping of the Hemagglutinin Molecule of A/(H1N1)pdm09 Influenza Virus by Using Monoclonal Antibody Escape Mutants",
+      "journal": "Journal of Virology",
+      "doi_url": "https://doi.org/https://doi.org/10.1128/jvi.01381-14"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "A214T",
+    "reference_accession": "ACR09395",
+    "effect": "Antigenic escape mutation",
+    "doi": "https://doi.org/10.1128/jvi.01381-14",
+    "notes": "A/Narita/1/2009",
+    "metadata": {
+      "authors": "Yoko Matsuzaki, Kanetsu Sugawara, Mina Nakauchi, Yoshimasa Takahashi, Taishi Onodera, Yasuko Tsunetsugu-Yokota, Takayuki Matsumura, Manabu Ato, Kazuo Kobayashi, Yoshitaka Shimotai, Katsumi Mizuta, Seiji Hongo, Masato Tashiro, Eri Nobusawa",
+      "year": "2014",
+      "title": "Epitope Mapping of the Hemagglutinin Molecule of A/(H1N1)pdm09 Influenza Virus by Using Monoclonal Antibody Escape Mutants",
+      "journal": "Journal of Virology",
+      "doi_url": "https://doi.org/https://doi.org/10.1128/jvi.01381-14"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "S220T",
+    "reference_accession": "ACR09395",
+    "effect": "Antigenic escape mutation",
+    "doi": "https://doi.org/10.1128/jvi.01381-14",
+    "notes": "A/Narita/1/2009",
+    "metadata": {
+      "authors": "Yoko Matsuzaki, Kanetsu Sugawara, Mina Nakauchi, Yoshimasa Takahashi, Taishi Onodera, Yasuko Tsunetsugu-Yokota, Takayuki Matsumura, Manabu Ato, Kazuo Kobayashi, Yoshitaka Shimotai, Katsumi Mizuta, Seiji Hongo, Masato Tashiro, Eri Nobusawa",
+      "year": "2014",
+      "title": "Epitope Mapping of the Hemagglutinin Molecule of A/(H1N1)pdm09 Influenza Virus by Using Monoclonal Antibody Escape Mutants",
+      "journal": "Journal of Virology",
+      "doi_url": "https://doi.org/https://doi.org/10.1128/jvi.01381-14"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "E233K",
+    "reference_accession": "ACR09395",
+    "effect": "Antigenic escape mutation",
+    "doi": "https://doi.org/10.1128/jvi.01381-14",
+    "notes": "A/Narita/1/2009",
+    "metadata": {
+      "authors": "Yoko Matsuzaki, Kanetsu Sugawara, Mina Nakauchi, Yoshimasa Takahashi, Taishi Onodera, Yasuko Tsunetsugu-Yokota, Takayuki Matsumura, Manabu Ato, Kazuo Kobayashi, Yoshitaka Shimotai, Katsumi Mizuta, Seiji Hongo, Masato Tashiro, Eri Nobusawa",
+      "year": "2014",
+      "title": "Epitope Mapping of the Hemagglutinin Molecule of A/(H1N1)pdm09 Influenza Virus by Using Monoclonal Antibody Escape Mutants",
+      "journal": "Journal of Virology",
+      "doi_url": "https://doi.org/https://doi.org/10.1128/jvi.01381-14"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "R238K",
+    "reference_accession": "ACR09395",
+    "effect": "Antigenic escape mutation",
+    "doi": "https://doi.org/10.1128/jvi.01381-14",
+    "notes": "A/Narita/1/2009",
+    "metadata": {
+      "authors": "Yoko Matsuzaki, Kanetsu Sugawara, Mina Nakauchi, Yoshimasa Takahashi, Taishi Onodera, Yasuko Tsunetsugu-Yokota, Takayuki Matsumura, Manabu Ato, Kazuo Kobayashi, Yoshitaka Shimotai, Katsumi Mizuta, Seiji Hongo, Masato Tashiro, Eri Nobusawa",
+      "year": "2014",
+      "title": "Epitope Mapping of the Hemagglutinin Molecule of A/(H1N1)pdm09 Influenza Virus by Using Monoclonal Antibody Escape Mutants",
+      "journal": "Journal of Virology",
+      "doi_url": "https://doi.org/https://doi.org/10.1128/jvi.01381-14"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "N142D",
+    "reference_accession": "JQ858372",
+    "effect": "Antigenic escape mutation",
+    "doi": "10.1016/j.virusres.2012.03.003",
+    "notes": "A/Moscow/IIV01/2009",
+    "metadata": {
+      "authors": "Irina Rudneva, Anna Ignatieva, Tatiana Timofeeva, Aleksandr Shilov, Alla Kushch, Olga Masalova, Regina Klimova, Nicolai Bovin, Larisa Mochalova, Nikolai Kaverin",
+      "year": "2012",
+      "title": "Escape mutants of pandemic influenza A/H1N1 2009 virus: Variations in antigenic specificity and receptor affinity of the hemagglutinin",
+      "journal": "Virus Research",
+      "doi_url": "https://doi.org/10.1016/j.virusres.2012.03.003"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "N142S",
+    "reference_accession": "JQ858372",
+    "effect": "Antigenic escape mutation",
+    "doi": "10.1016/j.virusres.2012.03.003",
+    "notes": "A/Moscow/IIV01/2009",
+    "metadata": {
+      "authors": "Irina Rudneva, Anna Ignatieva, Tatiana Timofeeva, Aleksandr Shilov, Alla Kushch, Olga Masalova, Regina Klimova, Nicolai Bovin, Larisa Mochalova, Nikolai Kaverin",
+      "year": "2012",
+      "title": "Escape mutants of pandemic influenza A/H1N1 2009 virus: Variations in antigenic specificity and receptor affinity of the hemagglutinin",
+      "journal": "Virus Research",
+      "doi_url": "https://doi.org/10.1016/j.virusres.2012.03.003"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "K169E",
+    "reference_accession": "JQ858372",
+    "effect": "Antigenic escape mutation",
+    "doi": "10.1016/j.virusres.2012.03.003",
+    "notes": "A/Moscow/IIV01/2009",
+    "metadata": {
+      "authors": "Irina Rudneva, Anna Ignatieva, Tatiana Timofeeva, Aleksandr Shilov, Alla Kushch, Olga Masalova, Regina Klimova, Nicolai Bovin, Larisa Mochalova, Nikolai Kaverin",
+      "year": "2012",
+      "title": "Escape mutants of pandemic influenza A/H1N1 2009 virus: Variations in antigenic specificity and receptor affinity of the hemagglutinin",
+      "journal": "Virus Research",
+      "doi_url": "https://doi.org/10.1016/j.virusres.2012.03.003"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "G171E",
+    "reference_accession": "JQ858372",
+    "effect": "Antigenic escape mutation",
+    "doi": "10.1016/j.virusres.2012.03.003",
+    "notes": "A/Moscow/IIV01/2009",
+    "metadata": {
+      "authors": "Irina Rudneva, Anna Ignatieva, Tatiana Timofeeva, Aleksandr Shilov, Alla Kushch, Olga Masalova, Regina Klimova, Nicolai Bovin, Larisa Mochalova, Nikolai Kaverin",
+      "year": "2012",
+      "title": "Escape mutants of pandemic influenza A/H1N1 2009 virus: Variations in antigenic specificity and receptor affinity of the hemagglutinin",
+      "journal": "Virus Research",
+      "doi_url": "https://doi.org/10.1016/j.virusres.2012.03.003"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "N172D",
+    "reference_accession": "JQ858372",
+    "effect": "Antigenic escape mutation",
+    "doi": "10.1016/j.virusres.2012.03.003",
+    "notes": "A/Moscow/IIV01/2009",
+    "metadata": {
+      "authors": "Irina Rudneva, Anna Ignatieva, Tatiana Timofeeva, Aleksandr Shilov, Alla Kushch, Olga Masalova, Regina Klimova, Nicolai Bovin, Larisa Mochalova, Nikolai Kaverin",
+      "year": "2012",
+      "title": "Escape mutants of pandemic influenza A/H1N1 2009 virus: Variations in antigenic specificity and receptor affinity of the hemagglutinin",
+      "journal": "Virus Research",
+      "doi_url": "https://doi.org/10.1016/j.virusres.2012.03.003"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "D203N",
+    "reference_accession": "JQ858372",
+    "effect": "Antigenic escape mutation",
+    "doi": "10.1016/j.virusres.2012.03.003",
+    "notes": "A/Moscow/IIV01/2009",
+    "metadata": {
+      "authors": "Irina Rudneva, Anna Ignatieva, Tatiana Timofeeva, Aleksandr Shilov, Alla Kushch, Olga Masalova, Regina Klimova, Nicolai Bovin, Larisa Mochalova, Nikolai Kaverin",
+      "year": "2012",
+      "title": "Escape mutants of pandemic influenza A/H1N1 2009 virus: Variations in antigenic specificity and receptor affinity of the hemagglutinin",
+      "journal": "Virus Research",
+      "doi_url": "https://doi.org/10.1016/j.virusres.2012.03.003"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "D203E",
+    "reference_accession": "JQ858372",
+    "effect": "Antigenic escape mutation",
+    "doi": "10.1016/j.virusres.2012.03.003",
+    "notes": "A/Moscow/IIV01/2009",
+    "metadata": {
+      "authors": "Irina Rudneva, Anna Ignatieva, Tatiana Timofeeva, Aleksandr Shilov, Alla Kushch, Olga Masalova, Regina Klimova, Nicolai Bovin, Larisa Mochalova, Nikolai Kaverin",
+      "year": "2012",
+      "title": "Escape mutants of pandemic influenza A/H1N1 2009 virus: Variations in antigenic specificity and receptor affinity of the hemagglutinin",
+      "journal": "Virus Research",
+      "doi_url": "https://doi.org/10.1016/j.virusres.2012.03.003"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "S223N",
+    "reference_accession": "JQ858372",
+    "effect": "Antigenic escape mutation",
+    "doi": "10.1016/j.virusres.2012.03.003",
+    "notes": "A/Moscow/IIV01/2009",
+    "metadata": {
+      "authors": "Irina Rudneva, Anna Ignatieva, Tatiana Timofeeva, Aleksandr Shilov, Alla Kushch, Olga Masalova, Regina Klimova, Nicolai Bovin, Larisa Mochalova, Nikolai Kaverin",
+      "year": "2012",
+      "title": "Escape mutants of pandemic influenza A/H1N1 2009 virus: Variations in antigenic specificity and receptor affinity of the hemagglutinin",
+      "journal": "Virus Research",
+      "doi_url": "https://doi.org/10.1016/j.virusres.2012.03.003"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "G241E",
+    "reference_accession": "JQ858372",
+    "effect": "Antigenic escape mutation",
+    "doi": "10.1016/j.virusres.2012.03.003",
+    "notes": "A/Moscow/IIV01/2009",
+    "metadata": {
+      "authors": "Irina Rudneva, Anna Ignatieva, Tatiana Timofeeva, Aleksandr Shilov, Alla Kushch, Olga Masalova, Regina Klimova, Nicolai Bovin, Larisa Mochalova, Nikolai Kaverin",
+      "year": "2012",
+      "title": "Escape mutants of pandemic influenza A/H1N1 2009 virus: Variations in antigenic specificity and receptor affinity of the hemagglutinin",
+      "journal": "Virus Research",
+      "doi_url": "https://doi.org/10.1016/j.virusres.2012.03.003"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "K298M",
+    "reference_accession": "JQ858372",
+    "effect": "Antigenic escape mutation",
+    "doi": "10.1016/j.virusres.2012.03.003",
+    "notes": "A/Moscow/IIV01/2009",
+    "metadata": {
+      "authors": "Irina Rudneva, Anna Ignatieva, Tatiana Timofeeva, Aleksandr Shilov, Alla Kushch, Olga Masalova, Regina Klimova, Nicolai Bovin, Larisa Mochalova, Nikolai Kaverin",
+      "year": "2012",
+      "title": "Escape mutants of pandemic influenza A/H1N1 2009 virus: Variations in antigenic specificity and receptor affinity of the hemagglutinin",
+      "journal": "Virus Research",
+      "doi_url": "https://doi.org/10.1016/j.virusres.2012.03.003"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "S88Y",
+    "reference_accession": "KF860846",
+    "effect": "Antigenic escape mutation",
+    "doi": "https://doi.org/10.1099/vir.0.061598-0",
+    "notes": "A/Extremadura/RR6530/2010",
+    "metadata": {
+      "authors": "Blanca Garc\u00eda-Barreno, Teresa Delgado, Sonia Benito, Inmaculada Casas, Francisco Pozo, Mar\u00eda Teresa Cuevas, Vicente Mas, Alfonsina Trento, Ariel Rodriguez-Frandsen, Ana Falc\u00f3n, Juan Ort\u00edn, Amelia Nieto, Jos\u00e9 A. Melero",
+      "year": "2014",
+      "title": "Characterization of an enhanced antigenic change in the pandemic 2009 H1N1 influenza virus haemagglutinin",
+      "journal": "Journal of General Virology",
+      "doi_url": "https://doi.org/https://doi.org/10.1099/vir.0.061598-0"
+    }
+  },
+  {
+    "protein": "HA",
+    "mutation": "K136N",
+    "reference_accession": "KF860846",
+    "effect": "Antigenic escape mutation",
+    "doi": "https://doi.org/10.1099/vir.0.061598-0",
+    "notes": "A/Extremadura/RR6530/2010",
+    "metadata": {
+      "authors": "Blanca Garc\u00eda-Barreno, Teresa Delgado, Sonia Benito, Inmaculada Casas, Francisco Pozo, Mar\u00eda Teresa Cuevas, Vicente Mas, Alfonsina Trento, Ariel Rodriguez-Frandsen, Ana Falc\u00f3n, Juan Ort\u00edn, Amelia Nieto, Jos\u00e9 A. Melero",
+      "year": "2014",
+      "title": "Characterization of an enhanced antigenic change in the pandemic 2009 H1N1 influenza virus haemagglutinin",
+      "journal": "Journal of General Virology",
+      "doi_url": "https://doi.org/https://doi.org/10.1099/vir.0.061598-0"
+    }
+  }
+]

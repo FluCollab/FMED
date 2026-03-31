@@ -111,6 +111,11 @@ jobs:
           python .github/scripts/add_doi_details.py docs/parsed_issues.tsv docs/validated_dois.tsv
           cat docs/validated_dois.tsv
 
+      - name: Regenerate API Files
+        if: env.ACCEPTED == 'true'
+        run: |
+          python .github/scripts/generate_api.py
+
       - name: Commit and Push Changes
         if: env.ACCEPTED == 'true'
         run: |
@@ -118,5 +123,6 @@ jobs:
           git config --global user.email "github-actions@github.com"
           git add docs/parsed_issues.tsv
           git add docs/validated_dois.tsv
+          git add docs/api/*.json docs/api/protein/*.json
           git commit -m "Updated parsed issues from Issue #${{ env.ISSUE_NUMBER }}"
           git push

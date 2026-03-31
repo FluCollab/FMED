@@ -65,12 +65,17 @@ jobs:
         run: |
           python .github/scripts/add_doi_details.py docs/parsed_issues.tsv docs/validated_dois.tsv
 
+      - name: Regenerate API Files
+        run: |
+          python .github/scripts/generate_api.py
+
       - name: Commit and Push Changes
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           
           git add docs/parsed_issues.tsv docs/validated_dois.tsv
+          git add docs/api/*.json docs/api/protein/*.json
           
           if git diff --staged --quiet; then
             echo "No changes to commit."
